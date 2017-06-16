@@ -1,0 +1,16 @@
+首页：/
+列表页：http://www.72p.org/cat1.html
+详情页：http://www.72p.org/cat4/id16.html
+单页：http://www.72p.org/contact.html
+标签页：http://www.72p.org/tag1.html
+搜索页：http://www.72p.org/search?keyword=百度
+
+
+后台登录：/Fladmin/Login
+账号：admin888，密码：admin
+
+恢复后台密码：/Fladmin/Login/recoverpwd
+
+
+
+

@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title><?php echo $post["title"]; ?>_<?php echo cms_webname; ?></title><link rel="stylesheet" href="/css/wap.css" media="all"></head><body>
+
+<header class="mheader-a"><h2 class="bt"><?php echo cms_webname; ?></h2><a href="javascript:;"><div class="phone-icon telphone"></div></a></header>
+
+<include file="./Flhome/Wap/View/header.html" />
+<article class="mbanner-b mb10"><a href=""><img src="/images/banner.jpg"></a></article>
+
+<article class="mbox cinfo"><h1 class="tith"><?php echo $post["title"]; ?></h1>
+<div class="mabout-a"><p>时间：<?php echo date("Y-m-d",$post["pubdate"]); ?></p><?php echo $post["body"]; ?>
+<br>下一篇：<?php if($pre){ ?><a href="<?php echo murl(array("id"=>$pre['id'],"catid"=>$pre["typeid"],"type"=>'content')); ?>"><?php echo $pre["title"]; ?></a><?php }else{echo '没有了';} ?></div></article>
+
+<article class="mbox"><h3 class="tit"><i class="tit_icon"></i>相关推荐</h3><ul class="mnews-b" id="ajlist"><?php $posts=arclist(array("row"=>5,"typeid"=>$post["typeid"],"orderby"=>'rand()'));foreach($posts as $row){ ?>
+<li><span class="group">[<?php echo date("Y-m-d",$row['pubdate']); ?>]</span><a href="<?php echo murl(array("id"=>$row['id'],"catid"=>$row['typeid'],"type"=>'content')); ?>"><?php echo $row['title']; ?></a></li><?php } ?>
+</ul><div class="about-more more mt10"><a id="listbu" href="javascript:;">查看更多<i class="phone-icon mico"></i></a></div></article>
+
+</body></html>
