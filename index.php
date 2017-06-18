@@ -21,6 +21,7 @@ define('APP_DEBUG',True);
 
 // 版本号
 define('CMS_VERSION','1.1.0');
+define('CMS_ADMIN','/Fladmin/');
 
 // 定义应用目录
 define('APP_PATH','./Flhome/');

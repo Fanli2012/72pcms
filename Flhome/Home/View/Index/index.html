@@ -10,19 +10,19 @@
             <img class="img-circle" src="/images/1.jpg" alt="Generic placeholder image" width="140" height="140">
             <h2>网页搜索</h2>
             <p>作为全球最大的中文搜索引擎公司，百度一直致力于让网民更便捷地获取信息，</p>
-            <p><a class="btn btn-default" href="http://www.72p.org/cat2/id4.html" role="button">更多详情 &raquo;</a></p>
+            <p><a class="btn btn-default" href="<?php echo url(array("id"=>1,"type"=>'content')); ?>" role="button">更多详情 &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
             <img class="img-circle" src="/images/3.jpg" alt="Generic placeholder image" width="140" height="140">
             <h2>社区产品</h2>
             <p>信息获取的最快捷方式是人与人直接交流，为了让那些对同一个话题感兴趣的人们聚集在一起。</p>
-            <p><a class="btn btn-default" href="http://www.72p.org/cat3/id10.html" role="button">更多详情 &raquo;</a></p>
+            <p><a class="btn btn-default" href="<?php echo url(array("id"=>2,"type"=>'content')); ?>" role="button">更多详情 &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
             <img class="img-circle" src="/images/4.jpg" alt="Generic placeholder image" width="140" height="140">
             <h2>电子商务</h2>
             <p>基于百度独有的搜索技术和强大社区资源，百度有啊突破性实现了网络交易和网络社区的无缝结合。</p>
-            <p><a class="btn btn-default" href="http://www.72p.org/cat2/id12.html" role="button">更多详情 &raquo;</a></p>
+            <p><a class="btn btn-default" href="<?php echo url(array("id"=>3,"type"=>'content')); ?>" role="button">更多详情 &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
 
@@ -85,7 +85,7 @@
 <div class="row">
     <?php $posts=arclist(array("row"=>4,"image"=>1,"orderby"=>'rand()'));foreach($posts as $row){ ?>
     <div class="col-xs-6 col-sm-3">
-    <a href="<?php echo url(array("id"=>$row['id'],"catid"=>$row['typeid'],"type"=>'content')); ?>" target="_blank">
+    <a href="<?php echo url(array("id"=>$row['id'],"catid"=>$row['typeid'],"type"=>'content')); ?>">
     <img src="<?php echo $row['litpic']; ?>" alt="<?php echo $row['title']; ?>" class="imgzsy">
     </a>
     </div>
@@ -100,7 +100,7 @@ $(function(){
 </div>
 
 <div class="searchbox row" style="text-align:center;padding-bottom:50px;">
-<form target="_blank" class="form-inline" method="get" action="/search" role="form">
+<form class="form-inline" method="get" action="/search" role="form">
 <div class="form-group">
 <input type="text" class="form-control" id="keyword" name="keyword" placeholder="请输入关键词...">
 </div>
@@ -111,7 +111,7 @@ $(function(){
 <div class="row">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;友情链接：
 <?php $posts=flinklist(array("row"=>8)); foreach($posts as $row) { ?>
-<a target="_blank" href="<?php echo $row['url']; ?>"><?php echo $row['webname']; ?></a>&nbsp;
+<a href="<?php echo $row['url']; ?>"><?php echo $row['webname']; ?></a>&nbsp;
 <?php } ?></div>
 </div><!-- /.container -->
 <include file="./Flhome/Home/View/footer.html" /></body></html>

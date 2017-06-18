@@ -17,11 +17,11 @@ class FriendlinkController extends BaseController
         
 		if(M('Friendlink')->data($data)->add())
         {
-            $this->success('添加成功！', '/'.FLADMIN.'/Friendlink' , 1);
+            $this->success('添加成功！', CMS_ADMIN.'Friendlink' , 1);
         }
 		else
 		{
-			$this->error('添加失败！请修改后重新添加', '/'.FLADMIN.'/Friendlink/add' , 3);
+			$this->error('添加失败！请修改后重新添加', CMS_ADMIN.'Friendlink/add' , 3);
 		}
     }
     
@@ -48,25 +48,25 @@ class FriendlinkController extends BaseController
         
 		if(M('Friendlink')->where("id=$id")->save($data))
         {
-            $this->success('修改成功！', '/'.FLADMIN.'/Friendlink' , 1);
+            $this->success('修改成功！', CMS_ADMIN.'Friendlink' , 1);
         }
 		else
 		{
-			$this->error('修改失败！', '/'.FLADMIN.'/Friendlink/edit?id='.$_POST["id"] , 3);
+			$this->error('修改失败！', CMS_ADMIN.'Friendlink/edit?id='.$_POST["id"] , 3);
 		}
     }
     
     public function del()
     {
-		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交','/'.FLADMIN.'/Friendlink' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
+		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交',CMS_ADMIN.'Friendlink' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
 		
 		if(M("Friendlink")->where("id=$id")->delete())
         {
-            $this->success('删除成功', '/'.FLADMIN.'/Friendlink' , 1);
+            $this->success('删除成功', CMS_ADMIN.'Friendlink' , 1);
         }
 		else
 		{
-			$this->error('删除失败！请重新提交', '/'.FLADMIN.'/Friendlink', 3);
+			$this->error('删除失败！请重新提交', CMS_ADMIN.'Friendlink', 3);
 		}
     }
 }

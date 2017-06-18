@@ -1,69 +1,50 @@
-<dl class="lnav">
-<dt>常用操作</dt>
-<dd><a href="/<?php echo FLADMIN; ?>/Category"><span class="glyphicon glyphicon-th-list"></span> 网站栏目管理</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Article"><span class="glyphicon glyphicon-pencil"></span> 文章列表</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Article?ischeck=1"><span class="glyphicon glyphicon-pencil"></span> 未审核的文章</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Article/add"><span class="glyphicon glyphicon-file"></span> 发布文章</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Page"><span class="glyphicon glyphicon-equalizer"></span> 单页文档管理</a></dd>
-<dt>商品管理</dt>
-<dd><a href="/<?php echo FLADMIN; ?>/Product"><span class="glyphicon glyphicon-pencil"></span> 商品列表</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Product/add"><span class="glyphicon glyphicon-file"></span> 添加商品</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/ProductType"><span class="glyphicon glyphicon-th-list"></span> 商品分类</a></dd>
-<dt>批量维护</dt>
-<dd><a href="/<?php echo FLADMIN; ?>/Tag"><span class="glyphicon glyphicon-tag"></span> TAG标签管理</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Keyword"><span class="glyphicon glyphicon-fire"></span> 文档关键词维护</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Friendlink"><span class="glyphicon glyphicon-leaf"></span> 友情链接</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Slide"><span class="glyphicon glyphicon-leaf"></span> 轮播图</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/User"><span class="glyphicon glyphicon-user"></span> 用户管理</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Article/repetarc"><span class="glyphicon glyphicon-cog"></span> 重复文档检测</a></dd>
-<dt>系统设置</dt>
-<dd><a href="/<?php echo FLADMIN; ?>/Sysconfig"><span class="glyphicon glyphicon-wrench"></span> 系统基本参数</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Index/upcache"><span class="glyphicon glyphicon-refresh"></span> 更新缓存</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Guestbook"><span class="glyphicon glyphicon-refresh"></span> 在线留言</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Sysconfig" target="_blank"><span class="glyphicon glyphicon-book"></span> 参考文档</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Sysconfig" target="_blank"><span class="glyphicon glyphicon-envelope"></span> 意见反馈/官方交流</a></dd>
-</dl>
-<!-- <dl id="firstpane" class="lnav menu_list">
-<dt class="menu_head current">常用操作</dt>
-<div style="display:block" class="menu_body">
-<dd><a href="/<?php echo FLADMIN; ?>/Category"><span class="glyphicon glyphicon-th-list"></span> 网站栏目管理</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Article"><span class="glyphicon glyphicon-pencil"></span> 文章列表</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Article/add"><span class="glyphicon glyphicon-file"></span> 发布文章</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Page"><span class="glyphicon glyphicon-equalizer"></span> 单页文档管理</a></dd>
+<div class="menu">
+<ul class="leftmenu">
+<?php if($menus){ foreach($menus as $k=>$first){if(!isset($first['child']) && $first['deep']==0){}else{ ?>
+<!-- 一级菜单 -->
+<li><a href="<?php if(isset($first['child'])){echo 'javascript:;';}else{echo U($first['module'].'/'.$first['controller'].'/'.$first['action']);} ?>" class="<?php if(isset($first['child'])){echo 'inactive ';} if($k==0){echo 'active ';} ?>"><?php if($first['icon']){echo '<small class="'.$first['icon'].'"></small>';} ?> <?php echo $first['name']; ?></a>
+	<!-- 二级菜单 -->
+	<?php if(isset($first['child'])){ ?>
+	<ul style="display: none">
+	<?php foreach($first['child'] as $second){ ?>
+		<li><a target="appiframe" href="<?php if(isset($second['child'])){echo 'javascript:;';}else{echo U($second['module'].'/'.$second['controller'].'/'.$second['action']);} ?>" class="<?php if(isset($second['child'])){echo 'inactive ';} ?>"><small class="glyphicon glyphicon-hand-right"></small> <?php echo $second['name']; ?></a>
+			<!-- 三级菜单 -->
+			<?php if(isset($second['child'])){ ?>
+			<ul><?php foreach($second['child'] as $third){ ?>
+				<li><a target="appiframe" href="<?php echo U($third['module'].'/'.$third['controller'].'/'.$third['action']); ?>"><small class="glyphicon glyphicon-menu-right"></small> <?php echo $third['name']; ?></a></li><?php } ?>
+			</ul><?php } ?>
+		</li>
+	<?php } ?>
+	</ul><?php } ?>
+</li>
+<?php }}} ?>
+</ul>
 </div>
-<dt>商品管理</dt>
-<div>
-<dd><a href="/<?php echo FLADMIN; ?>/Product"><span class="glyphicon glyphicon-pencil"></span> 商品列表</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Product/add"><span class="glyphicon glyphicon-file"></span> 添加商品</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/ProductType"><span class="glyphicon glyphicon-th-list"></span> 商品分类</a></dd>
-</div>
-<dt>批量维护</dt>
-<div>
-<dd><a href="/<?php echo FLADMIN; ?>/Tag"><span class="glyphicon glyphicon-tag"></span> TAG标签管理</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Keyword"><span class="glyphicon glyphicon-fire"></span> 文档关键词维护</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Friendlink"><span class="glyphicon glyphicon-leaf"></span> 友情链接</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/User"><span class="glyphicon glyphicon-user"></span> 用户管理</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Article/repetarc"><span class="glyphicon glyphicon-cog"></span> 重复文档检测</a></dd>
-</div>
-<dt>系统设置</dt>
-<div>
-<dd><a href="/<?php echo FLADMIN; ?>/Sysconfig"><span class="glyphicon glyphicon-wrench"></span> 系统基本参数</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Index/upcache"><span class="glyphicon glyphicon-refresh"></span> 更新缓存</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Sysconfig" target="_blank"><span class="glyphicon glyphicon-book"></span> 参考文档</a></dd>
-<dd><a href="/<?php echo FLADMIN; ?>/Sysconfig" target="_blank"><span class="glyphicon glyphicon-envelope"></span> 意见反馈/官方交流</a></dd>
-</div>
-</dl> -->
 <script type="text/javascript">
 $(document).ready(function(){
-	$("#firstpane .menu_body:eq(0)").show();
-	$("#firstpane .menu_head").click(function(){
-		$(this).addClass("current").next(".menu_body").slideToggle(300).siblings(".menu_body").slideUp("slow");
-		$(this).siblings().removeClass("current");
+	$('.inactive').click(function(){
+		var className=$(this).parents('li').parents().attr('class');
+		
+		if($(this).siblings('ul').css('display')=='none')
+		{
+			if(className=="leftmenu")
+			{
+				$(this).parents('li').siblings('li').children('ul').parent('li').children('a').removeClass('active');
+				$(this).parents('li').siblings('li').children('ul').slideUp(100);
+				$(this).parents('li').children('ul').children('li').children('ul').parent('li').children('a').removeClass('active');
+				$(this).parents('li').children('ul').children('li').children('ul').slideUp(100);
+			}
+			
+			$(this).addClass('active');
+			$(this).siblings('ul').slideDown(100);
+		}
+		else
+		{
+			$(this).removeClass('active');
+			$(this).siblings('ul').slideUp(100);
+		}
 	});
-	$("#secondpane .menu_body:eq(0)").show();
-	$("#secondpane .menu_head").mouseover(function(){
-		$(this).addClass("current").next(".menu_body").slideDown(500).siblings(".menu_body").slideUp("slow");
-		$(this).siblings().removeClass("current");
-	});
+	
+	$('.active').trigger("click");
 });
 </script>

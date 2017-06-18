@@ -1,7 +1,7 @@
 <?php
 //定义常量
-define('FLADMIN', 'Fladmin'); // 后台模块，首字母最好大写
-define('FLLOGIN', 'fllogin'); // 后台登录
+//define('FLADMIN', 'Fladmin'); // 后台模块，首字母最好大写
+//define('FLLOGIN', 'fllogin'); // 后台登录
 
 //pc前台栏目、标签、内容页面地址生成
 function url(array $param)
@@ -14,7 +14,7 @@ function url(array $param)
     else if($param['type'] == 'content')
     {
         //内容页
-        $url .= '/cat'.$param['catid'].'/id'.$param['id'].'.html';
+        $url .= '/p/'.$param['id'];
     }
     else if($param['type'] == 'tags')
     {
@@ -24,9 +24,24 @@ function url(array $param)
     else if($param['type'] == 'page')
     {
         //单页面
-        $url .= '/'.$param['pagename'].'.html';
+        $url .= '/page/'.$param['pagename'].'.html';
     }
-    
+	else if($param['type'] == 'search')
+    {
+        //搜索关键词页面
+        $url .= '/s'.$param['searchid'];
+    }
+    else if($param['type'] == 'productlist')
+    {
+        //商品列表页
+        $url .= '/product'.$param['catid'];
+    }
+    else if($param['type'] == 'productdetail')
+    {
+        //商品内容页
+        $url .= '/goods/'.$param['id'];
+    }
+	
     return $url;
 }
 
@@ -41,7 +56,7 @@ function murl(array $param)
     else if($param['type'] == 'content')
     {
         //内容页
-        $url .= '/cat'.$param['catid'].'/id'.$param['id'].'.html';
+        $url .= '/p/'.$param['id'];
     }
     else if($param['type'] == 'tags')
     {
@@ -53,7 +68,22 @@ function murl(array $param)
         //单页面
         $url .= '/'.$param['pagename'].'.html';
     }
-    
+	else if($param['type'] == 'search')
+    {
+        //搜索关键词页面
+        $url .= '/s'.$param['searchid'];
+    }
+    else if($param['type'] == 'productlist')
+    {
+        //商品列表页
+        $url .= '/product'.$param['catid'];
+    }
+    else if($param['type'] == 'productdetail')
+    {
+        //商品内容页
+        $url .= '/goods/'.$param['id'];
+    }
+	
     return $url;
 }
 
@@ -69,6 +99,8 @@ function murl(array $param)
  */
 function arclist(array $param)
 {
+	$table = 'article';
+	if(!empty($param['table'])){$table=$param['table'];}
 	if(!empty($param['tuijian'])){$map['tuijian']=$param['tuijian'];}
 	if(!empty($param['typeid'])){$map['typeid']=$param['typeid'];}
 	if(!empty($param['image'])){$map['litpic']=array('NEQ','');}
@@ -77,11 +109,11 @@ function arclist(array $param)
 	
 	if(!empty($param['sql']))
 	{
-		$Artlist = M("Article")->field('body',true)->where($param['sql'])->order($orderby)->limit($limit)->select();
+		$Artlist = M($table)->field('body',true)->where($param['sql'])->order($orderby)->limit($limit)->select();
 	}
 	else
 	{
-		$Artlist = M("Article")->field('body',true)->where($map)->order($orderby)->limit($limit)->select();
+		$Artlist = M($table)->field('body',true)->where($map)->order($orderby)->limit($limit)->select();
 	}
 	
 	return $Artlist;
@@ -511,21 +543,22 @@ function tree($list,$pid=0)
             }
         }
     }
+	
     return $temp;
 }
 
 //递归获取面包屑导航
-function get_cat_path($cat)
+function get_cat_path($cat,$table='arctype',$type='list')
 {
     global $temp;
     
-    $row = M("Arctype")->field('typename,reid,id')->where("id=$cat")->find();
+    $row = M($table)->field('typename,reid,id')->where("id=$cat")->find();
     
-    $temp = '<a href="'.cms_basehost.'/cat'.$row["id"].'.html">'.$row["typename"]."</a> > ".$temp;
+    $temp = '<a href="'.url(array("catid"=>$row["id"],"type"=>$type)).'">'.$row["typename"]."</a> > ".$temp;
     
     if($row["reid"]<>0)
     {
-        get_cat_path($row["reid"]);
+        get_cat_path($row["reid"], $table, $type);
     }
     
     return $temp;

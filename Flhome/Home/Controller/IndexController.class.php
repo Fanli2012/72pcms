@@ -13,7 +13,7 @@ class IndexController extends BaseController
     //列表页
     public function category()
 	{
-		if(!empty($_GET["cat"]) && preg_match('/[0-9]+/',$_GET["cat"])){$cat=$_GET["cat"];}else{$this->error('非法操作！', '/' , 3);exit;}
+		if(!empty($_GET["cat"]) && preg_match('/[0-9]+/',$_GET["cat"])){$cat=$_GET["cat"];}else{header('Location:/nofound.html');}
         
 		if(S("catid$cat")){$post=S("catid$cat");}else{$post = M('Arctype')->cache("catid$cat",2592000)->where("id=$cat")->find();}
         $this->post = $post;
@@ -31,7 +31,7 @@ class IndexController extends BaseController
 		if($counts % $pagesize){//取总数据量除以每页数的余数
 		$pages = intval($counts/$pagesize) + 1; //如果有余数，则页数等于总数据量除以每页数的结果取整再加一,如果没有余数，则页数等于总数据量除以每页数的结果
 		}else{$pages = $counts/$pagesize;}
-		if(!empty($_GET["page"])){if($_GET["page"]==1 || $_GET["page"]>$pages){header("HTTP/1.0 404 Not Found");$this->error('操作失败');exit;}$page = $_GET["page"]-1;$nextpage=$_GET["page"]+1;$previouspage=$_GET["page"]-1;}else{$page = 0;$nextpage=2;$previouspage=0;}
+		if(!empty($_GET["page"])){if($_GET["page"]==1 || $_GET["page"]>$pages){header('Location:/nofound.html');}$page = $_GET["page"]-1;$nextpage=$_GET["page"]+1;$previouspage=$_GET["page"]-1;}else{$page = 0;$nextpage=2;$previouspage=0;}
 		$this->page = $page;
 		$this->pages = $pages;
 		$this->counts = $counts;
@@ -46,7 +46,7 @@ class IndexController extends BaseController
     //文章详情页
     public function detail()
 	{
-        if(!empty($_GET["id"]) && preg_match('/[0-9]+/',$_GET["id"])){$id = $_GET["id"];}else{$this->error('非法操作！', '/' , 3);exit;}
+        if(!empty($_GET["id"]) && preg_match('/[0-9]+/',$_GET["id"])){$id = $_GET["id"];}else{header('Location:/nofound.html');}
 		
 		if(S("detailid$id")){$post=S("detailid$id");}else{$post = M('Article')->cache("detailid$id",2592000)->where("id=$id")->find();}
 		if($post)
@@ -58,7 +58,7 @@ class IndexController extends BaseController
         }
         else
         {
-            $this->error('非法操作！', '/' , 3);exit;
+            header('Location:/nofound.html');
         }
         
 		if(S("catid$cat")){$post=S("catid$cat");}else{$post = M('Arctype')->cache("catid$cat",2592000)->where("id=$cat")->find();}
@@ -68,7 +68,7 @@ class IndexController extends BaseController
     //标签详情页
 	public function tag()
 	{
-		if(!empty($_GET["tag"]) && preg_match('/[0-9]+/',$_GET["tag"])){$tag=$_GET["tag"];}else{$this->error('非法操作！', '/' , 3);exit;}
+		if(!empty($_GET["tag"]) && preg_match('/[0-9]+/',$_GET["tag"])){$tag=$_GET["tag"];}else{header('Location:/nofound.html');}
         
 		if(S("tagid$tag")){$post=S("tagid$tag");}else{$post = M('Tagindex')->cache("tagid$tag",2592000)->where("id=$tag")->find();}
         $this->post = $post;
@@ -79,7 +79,7 @@ class IndexController extends BaseController
 		if($counts % $pagesize){//取总数据量除以每页数的余数
 		$pages = intval($counts/$pagesize) + 1; //如果有余数，则页数等于总数据量除以每页数的结果取整再加一,如果没有余数，则页数等于总数据量除以每页数的结果
 		}else{$pages = $counts/$pagesize;}
-		if(!empty($_GET["page"])){if($_GET["page"]==1 || $_GET["page"]>$pages){header("HTTP/1.0 404 Not Found");$this->error('操作失败');exit;}$page = $_GET["page"]-1;$nextpage=$_GET["page"]+1;$previouspage=$_GET["page"]-1;}else{$page = 0;$nextpage=2;$previouspage=0;}
+		if(!empty($_GET["page"])){if($_GET["page"]==1 || $_GET["page"]>$pages){header('Location:/nofound.html');}$page = $_GET["page"]-1;$nextpage=$_GET["page"]+1;$previouspage=$_GET["page"]-1;}else{$page = 0;$nextpage=2;$previouspage=0;}
 		$this->page = $page;
 		$this->pages = $pages;
 		$this->counts = $counts;
@@ -119,7 +119,7 @@ class IndexController extends BaseController
 		}
 		else
 		{
-			$this->error('请输入正确的关键词', '/' , 3);exit;
+			$this->error('请输入正确的关键词');exit;
 		}
 		
 		$this->display();
@@ -128,7 +128,7 @@ class IndexController extends BaseController
     //单页面
     public function page()
 	{
-        if(!empty($_GET["id"]) && preg_match('/[a-z0-9]+/',$_GET["id"])){$id = $map['filename'] = $_GET["id"];}else{$this->error('非法操作！', '/' , 3);exit;}
+        if(!empty($_GET["id"]) && preg_match('/[a-z0-9]+/',$_GET["id"])){$id = $map['filename'] = $_GET["id"];}else{header('Location:/nofound.html');}
 		
         if(S("pageid$id")){$post=S("pageid$id");}else{$post = M('Page')->cache("pageid$id",2592000)->where($map)->find();}
 		if($post)
@@ -137,10 +137,64 @@ class IndexController extends BaseController
         }
         else
         {
-            $this->error('非法操作！', '/' , 3);exit;
+            header('Location:/nofound.html');
         }
         
 		$this->display($post['template']);
+    }
+	
+	//商品列表页
+    public function productcat()
+	{
+		if(!empty($_GET["cat"]) && preg_match('/[0-9]+/',$_GET["cat"])){$cat=$_GET["cat"];}else{header('Location:/nofound.html');}
+        
+		$post = M('product_type')->where("id=$cat")->find();
+        $this->post = $post;
+		
+		$subcat="";
+		$post=M('product_type')->field('id')->where("reid=$cat")->select();
+		foreach($post as $row){$subcat=$subcat."typeid=".$row["id"]." or ";}
+		$subcat=$subcat."typeid=".$cat;
+		$this->sql = $subcat;
+		
+		$counts=M("product")->where($subcat)->count('id');
+		if($counts>cms_maxarc){$counts=cms_maxarc;}
+		$pagesize=cms_pagesize;$page=0;
+		if($counts % $pagesize){//取总数据量除以每页数的余数
+		$pages = intval($counts/$pagesize) + 1; //如果有余数，则页数等于总数据量除以每页数的结果取整再加一,如果没有余数，则页数等于总数据量除以每页数的结果
+		}else{$pages = $counts/$pagesize;}
+		if(!empty($_GET["page"])){if($_GET["page"]==1 || $_GET["page"]>$pages){header('Location:/nofound.html');}$page = $_GET["page"]-1;$nextpage=$_GET["page"]+1;$previouspage=$_GET["page"]-1;}else{$page = 0;$nextpage=2;$previouspage=0;}
+		$this->page = $page;
+		$this->pages = $pages;
+		$this->counts = $counts;
+		$start=$page*$pagesize;
+		
+		$this->posts = arclist(array("table"=>"product","sql"=>$subcat,"limit"=>"$start,$pagesize")); //获取列表
+		$this->pagenav = get_listnav(array("urltype"=>"product","counts"=>$counts,"pagesize"=>$pagesize,"pagenow"=>$page+1,"catid"=>$cat)); //获取分页列表
+    
+		$this->display();
+	}
+    
+    //商品详情页
+    public function product()
+	{
+        if(!empty($_GET["id"]) && preg_match('/[0-9]+/',$_GET["id"])){$id = $_GET["id"];}else{header('Location:/nofound.html');}
+		
+		$post = M('product')->where("id=$id")->find();
+		if($post)
+        {
+			$cat=$post['typeid'];
+            $post['body']=ReplaceKeyword($post['body']);
+			$this->post = $post;
+            $this->pre=get_article_prenext(array('aid'=>$post["id"],'typeid'=>$post["typeid"],'type'=>"pre"));
+        }
+        else
+        {
+            header('Location:/nofound.html');
+        }
+        
+		$post = M('product_type')->where("id=$cat")->find();
+        $this->display();
     }
     
 	/**
@@ -173,11 +227,11 @@ class IndexController extends BaseController
             session("username", $User['username']);
             session("uid", $User["id"]);
             session("admin_user_info", $User);
-			$this->success('登录成功！', '/'.FLADMIN , 1);
+			$this->success('登录成功！', CMS_ADMIN , 1);
         }
         else
         {
-            $this->error('登录失败！请重新登录！！', '/'.FLLOGIN ,1);
+            $this->error('登录失败！请重新登录！！');
         }
     }
 

@@ -11,7 +11,7 @@ class LoginController extends Controller
 	{
 		if(session('?admin_user_info'))
 		{
-			header("Location: /".FLADMIN);
+			header("Location: ".CMS_ADMIN);
 			exit;
 		}
         $this->display();
@@ -30,15 +30,15 @@ class LoginController extends Controller
         
         if($User)
         {
-            $User['rolename'] = M("user_role")->where("id=".$User['role_id'])->getField('rolename');
+            $User['rolename'] = M("user_role")->where("id=".$User['role_id'])->getField('name');
             session("username", $User['username']);
             session("uid", $User["id"]);
             session("admin_user_info", $User);
-			$this->success('登录成功！', '/'.FLADMIN , 1);
+			$this->success('登录成功！', CMS_ADMIN , 1);
         }
         else
         {
-            $this->error('用户名或密码错误！！', '/'.FLADMIN.'/Login' ,3);
+            $this->error('用户名或密码错误！！', CMS_ADMIN.'Login' ,3);
         }
     }
 
@@ -57,11 +57,11 @@ class LoginController extends Controller
         
         if(M('user')->where("id=1")->save($data))
         {
-            $this->success('密码恢复成功！', '/'.FLADMIN.'/Login' , 1);
+            $this->success('密码恢复成功！', CMS_ADMIN.'Login' , 1);
         }
 		else
 		{
-			$this->error('密码恢复失败！', '/'.FLADMIN.'/Login' , 3);
+			$this->error('密码恢复失败！', CMS_ADMIN.'Login' , 3);
 		}
     }
     

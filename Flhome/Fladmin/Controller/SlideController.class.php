@@ -19,11 +19,11 @@ class SlideController extends BaseController
     {
 		if(M('Slide')->data($_POST)->add())
         {
-            $this->success('添加成功！', '/'.FLADMIN.'/Slide' , 1);
+            $this->success('添加成功！', CMS_ADMIN.'Slide' , 1);
         }
 		else
 		{
-			$this->error('添加失败！请修改后重新添加', '/'.FLADMIN.'/Slide/add' , 3);
+			$this->error('添加失败！请修改后重新添加', CMS_ADMIN.'Slide/add' , 3);
 		}
     }
     
@@ -48,25 +48,25 @@ class SlideController extends BaseController
         
 		if(M('Slide')->where("id=$id")->save($_POST))
         {
-            $this->success('修改成功！', '/'.FLADMIN.'/Slide' , 1);
+            $this->success('修改成功！', CMS_ADMIN.'Slide' , 1);
         }
 		else
 		{
-			$this->error('修改失败！', '/'.FLADMIN.'/Slide/edit?id='.$id , 3);
+			$this->error('修改失败！', CMS_ADMIN.'Slide/edit?id='.$id , 3);
 		}
     }
     
     public function del()
     {
-		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交','/'.FLADMIN.'/Slide' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
+		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交',CMS_ADMIN.'Slide' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
 		
 		if(M("Slide")->where("id=$id")->delete())
         {
-            $this->success('删除成功', '/'.FLADMIN.'/Slide' , 1);
+            $this->success('删除成功', CMS_ADMIN.'Slide' , 1);
         }
 		else
 		{
-			$this->error('删除失败！请重新提交', '/'.FLADMIN.'/Slide', 3);
+			$this->error('删除失败！请重新提交', CMS_ADMIN.'Slide', 3);
 		}
     }
 }

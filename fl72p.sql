@@ -1,6 +1,6 @@
 /*
 SQLyog 企业版 - MySQL GUI v7.14 
-MySQL - 5.6.17 : Database - fl72p
+MySQL - 5.7.14 : Database - fl72p
 *********************************************************************
 */
 
@@ -26,7 +26,7 @@ CREATE TABLE `fl_access` (
 
 /*Data for the table `fl_access` */
 
-insert  into `fl_access`(`role_id`,`menu_id`) values (1,1),(1,2),(1,3),(1,4),(1,9),(1,11),(1,12),(1,18),(1,19),(1,20),(1,21),(1,22),(1,24),(1,26),(1,27),(1,28),(1,29),(1,30),(1,31),(1,32),(1,34),(1,36),(1,35),(1,37),(1,38),(1,39),(1,40),(1,42),(1,43),(1,46),(1,47),(1,121),(1,120),(1,119),(1,118),(1,117),(1,116),(1,115),(1,114),(1,130),(1,129),(1,128),(1,127),(1,126),(1,125),(1,113),(1,112),(1,103),(1,111),(1,110),(1,109),(1,108),(1,107),(1,106),(1,104),(1,103),(1,48),(1,49),(1,50),(1,54),(1,55),(1,57),(1,58),(1,59),(1,60),(1,88),(1,62),(1,63),(1,64),(1,65),(1,66),(1,67),(1,72),(1,73),(1,80),(1,81),(1,82),(1,83),(1,84),(1,85),(1,86),(1,87),(1,89),(1,90),(1,91),(1,92),(1,93),(1,94),(1,95),(1,96),(1,61),(1,97),(1,98),(1,99),(1,105),(1,122),(1,123),(1,124),(1,131),(1,132),(1,133),(1,138),(1,158),(1,163),(1,164),(1,165),(1,166),(1,172),(1,173),(1,198),(1,175),(1,176),(1,178),(1,179),(1,180),(1,181),(1,182),(1,183),(1,177),(1,192),(1,191),(1,197),(1,196),(1,195),(1,193),(1,199),(1,200),(1,201),(1,202),(1,210),(1,211),(1,212),(1,213),(1,214),(1,5),(1,215),(1,216),(1,217),(1,218),(1,6),(1,220),(1,222),(1,223),(1,224),(1,334),(1,226),(1,230),(1,231),(1,335),(1,238),(1,239),(1,240),(1,241),(1,242),(1,243),(1,244),(1,249),(1,253),(1,254),(1,341),(1,257),(1,259),(1,260),(1,261),(1,262),(1,263),(1,264),(1,265),(1,266),(1,267),(1,273),(16,344),(1,303),(16,303),(1,318),(1,319),(1,336),(1,337),(1,338),(1,329),(1,330),(1,1),(1,2),(1,3),(1,4),(1,9),(1,11),(1,12),(1,18),(1,19),(1,20),(1,21),(1,22),(1,24),(1,26),(1,27),(1,28),(1,29),(1,30),(1,31),(1,32),(1,34),(1,36),(1,35),(1,37),(1,38),(1,39),(1,40),(1,42),(1,43),(1,46),(1,47),(1,121),(1,120),(1,119),(1,118),(1,117),(1,116),(1,115),(1,114),(1,130),(1,129),(1,128),(1,127),(1,126),(1,125),(1,113),(1,112),(1,103),(1,111),(1,110),(1,109),(1,108),(1,107),(1,106),(1,104),(1,103),(1,48),(1,49),(1,50),(1,54),(1,55),(1,57),(1,58),(1,59),(1,60),(1,88),(1,62),(1,63),(1,64),(1,65),(1,66),(1,67),(1,72),(1,73),(1,80),(1,81),(1,82),(1,83),(1,84),(1,85),(1,86),(1,87),(1,89),(1,90),(1,91),(1,92),(1,93),(1,94),(1,95),(1,96),(1,61),(1,97),(1,98),(1,99),(1,105),(1,122),(1,123),(1,124),(1,131),(1,132),(1,133),(1,138),(1,158),(1,163),(1,164),(1,165),(1,166),(1,172),(1,173),(1,198),(1,175),(1,176),(1,178),(1,179),(1,180),(1,181),(1,182),(1,183),(1,177),(1,192),(1,191),(1,197),(1,196),(1,195),(1,193),(1,199),(1,200),(1,201),(1,202),(1,210),(1,211),(1,212),(1,213),(1,214),(1,5),(1,215),(1,216),(1,217),(1,218),(1,6),(1,220),(1,222),(1,223),(1,224),(1,334),(1,226),(1,230),(1,231),(1,335),(1,238),(1,239),(1,240),(1,241),(1,242),(1,243),(1,244),(1,249),(1,253),(1,254),(1,256),(1,257),(1,259),(1,260),(1,261),(1,262),(1,263),(1,264),(1,265),(1,266),(1,267),(1,273),(16,163),(16,6),(1,303),(16,1),(1,318),(1,319),(1,336),(1,337),(1,338),(1,329),(1,330),(1,339),(1,340),(1,342),(1,343),(1,344),(1,345),(1,346),(1,347),(1,348),(1,349),(1,350),(1,351),(1,352),(1,353),(1,354),(1,355);
+insert  into `fl_access`(`role_id`,`menu_id`) values (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12),(1,13),(1,14),(1,15),(1,16),(1,17),(1,18),(1,19),(1,20),(1,21),(1,22),(1,23),(1,24),(1,25),(1,26),(1,27),(1,28),(1,29),(1,30),(1,31),(1,32),(1,33),(1,34),(1,35),(1,36),(1,37),(1,38),(1,39),(1,40),(1,41),(1,42),(1,43),(1,44),(1,45),(1,46),(1,47),(1,48),(1,49),(1,50),(1,51),(1,52),(1,53),(1,54),(1,55),(1,56),(1,57),(1,58),(1,59),(1,60),(1,61),(1,62),(1,63),(1,64),(1,65),(1,66),(1,67),(1,68),(1,69),(1,70),(1,71),(1,72),(1,73),(1,74),(1,75),(1,76),(1,77),(1,78),(1,79),(1,80),(1,81),(1,82),(1,83),(1,84),(1,85),(1,86),(1,87),(1,88),(1,89),(1,90),(1,91),(1,92),(1,93),(1,94),(1,95),(1,96),(1,97),(1,98),(1,99),(1,100),(1,101),(1,102),(1,103),(2,1),(2,11),(2,12),(2,13),(2,14),(2,15),(2,16),(2,17),(2,18),(2,19),(2,20),(2,21),(2,22),(2,23),(2,24),(2,25),(2,32),(2,33),(2,34),(2,35),(2,36),(2,37);
 
 /*Table structure for table `fl_arctype` */
 
@@ -94,33 +94,14 @@ CREATE TABLE `fl_friendlink` (
   `id` smallint(5) NOT NULL AUTO_INCREMENT,
   `webname` varchar(60) NOT NULL DEFAULT '',
   `url` varchar(100) NOT NULL DEFAULT '',
-  `group` smallint(2) NOT NULL DEFAULT '0',
+  `group_id` smallint(2) NOT NULL DEFAULT '0',
+  `rank` smallint(5) DEFAULT '0' COMMENT '排序',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `fl_friendlink` */
 
-insert  into `fl_friendlink`(`id`,`webname`,`url`,`group`) values (1,'72PCMS','http://www.72p.org/',0),(2,'炒股入门知识','http://www.pe7.org/',0);
-
-/*Table structure for table `fl_goods_category` */
-
-DROP TABLE IF EXISTS `fl_goods_category`;
-
-CREATE TABLE `fl_goods_category` (
-  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `shop_id` int(11) NOT NULL COMMENT '商家id',
-  `cat_name` varchar(90) NOT NULL DEFAULT '',
-  `keywords` varchar(255) NOT NULL DEFAULT '',
-  `parent_id` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `sort_order` tinyint(1) unsigned NOT NULL DEFAULT '50',
-  `is_show` tinyint(1) unsigned NOT NULL DEFAULT '1',
-  `thumb` varchar(255) NOT NULL,
-  `attr_id` int(11) NOT NULL COMMENT '关联的属性类型',
-  PRIMARY KEY (`id`),
-  KEY `parent_id` (`parent_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-
-/*Data for the table `fl_goods_category` */
+insert  into `fl_friendlink`(`id`,`webname`,`url`,`group_id`,`rank`) values (1,'72PCMS','http://www.72p.org/',0,0),(2,'炒股入门知识','http://www.pe7.org/',0,0);
 
 /*Table structure for table `fl_guestbook` */
 
@@ -136,11 +117,11 @@ CREATE TABLE `fl_guestbook` (
   `phone` char(11) DEFAULT '' COMMENT '电话',
   `email` varchar(60) DEFAULT '' COMMENT '邮箱',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 /*Data for the table `fl_guestbook` */
 
-insert  into `fl_guestbook`(`id`,`title`,`addtime`,`msg`,`status`,`name`,`phone`,`email`) values (2,'对百度搜索引擎友好的网站结构',1476063905,'我们在做网站结构相关SEO工作时，都应该考虑以下四个问题：1，Baiduspider能不能找到所有网页2，Baiduspider是否知道哪个网页是重要的3，Baiduspider能否顺利提取网页内容4，Baiduspider能否在网页',1,'','',''),(3,'在移动搜索展现端获得良好表现的注意事项',1476063946,'移动网站优化和PC网站的很多方面都是相似甚至相同的，但由于移动搜索界面大小受限，移动网站在标题和摘要的撰写上有很多有别有PC端的情况。1，有吸引力的title用户在百度移动搜索中输',0,'','',''),(4,'撰写搜索引擎喜欢的标题',1476063980,'通过观察可以发现，那些可以从搜索引擎获得大批流量的站点来说，SEO思维渗透到了每个岗位，产品人员在提交项目MRD时，网页标题的写法是必不可少的一部分；编辑对文章内容负责的同时',0,'','',''),(5,'Baiduspider主要抓取策略类型',1476064033,'Baiduspider在抓取过程中面对的是一个超级复杂的网络环境，为了使系统可以抓取到尽可能多的有价值资源并保持系统及实际环境中页面的一致性同时不给网站体验造成压力，会设计多种复杂',0,'','',''),(6,'百度移动搜索优化前期准备工作',1476064079,'域名：与PC网站一样，域名是用户对一个网站的第一印象。一个好的移动域名，不仅容易记忆、易于输入，还能方便用户向其他人推荐。域名应尽量简短易懂，越短的域名记忆成本越低，越',0,'','',''),(9,'网页优化的大忌',1476064241,'网页进行正常优化，有助于搜索引擎更好地了解网页主体内容，而网页优化同样是一柄双刃剑，搞不好会造成费力不讨好、甚至被搜索引擎惩罚的后果。在百度看来，网页优化的大忌有三点',0,'','',''),(10,'百度优先建重要库的原则',1476064284,'Baiduspider抓了多少页面并不是最重要的，重要的是有多少页面被建索引库，即我们常说的“建库”。众所周知，搜索引擎的索引库是分层级的，优质的网页会被分配到重要索引库，普通网页',0,'','',''),(11,'禁止百度移动搜索对网页进行转码的方法',1476064353,'在百度移动搜索引擎中，为了更好地满足用户需求，会同时为用户提供PC网页和mobile网页，但目前受交互、兼容和流量等因素影响，PC页在移动终端中的直接浏览体验较差。因此，百度移动搜',0,'','','');
+insert  into `fl_guestbook`(`id`,`title`,`addtime`,`msg`,`status`,`name`,`phone`,`email`) values (1,'对百度搜索引擎友好的网站结构',1476063905,'我们在做网站结构相关SEO工作时，都应该考虑以下四个问题：1，Baiduspider能不能找到所有网页2，Baiduspider是否知道哪个网页是重要的3，Baiduspider能否顺利提取网页内容4，Baiduspider能否在网页',1,'','',''),(2,'在移动搜索展现端获得良好表现的注意事项',1476063946,'移动网站优化和PC网站的很多方面都是相似甚至相同的，但由于移动搜索界面大小受限，移动网站在标题和摘要的撰写上有很多有别有PC端的情况。1，有吸引力的title用户在百度移动搜索中输',0,'','',''),(3,'撰写搜索引擎喜欢的标题',1476063980,'通过观察可以发现，那些可以从搜索引擎获得大批流量的站点来说，SEO思维渗透到了每个岗位，产品人员在提交项目MRD时，网页标题的写法是必不可少的一部分；编辑对文章内容负责的同时',0,'','',''),(4,'Baiduspider主要抓取策略类型',1476064033,'Baiduspider在抓取过程中面对的是一个超级复杂的网络环境，为了使系统可以抓取到尽可能多的有价值资源并保持系统及实际环境中页面的一致性同时不给网站体验造成压力，会设计多种复杂',0,'','',''),(5,'百度移动搜索优化前期准备工作',1476064079,'域名：与PC网站一样，域名是用户对一个网站的第一印象。一个好的移动域名，不仅容易记忆、易于输入，还能方便用户向其他人推荐。域名应尽量简短易懂，越短的域名记忆成本越低，越',0,'','',''),(6,'网页优化的大忌',1476064241,'网页进行正常优化，有助于搜索引擎更好地了解网页主体内容，而网页优化同样是一柄双刃剑，搞不好会造成费力不讨好、甚至被搜索引擎惩罚的后果。在百度看来，网页优化的大忌有三点',0,'','',''),(7,'百度优先建重要库的原则',1476064284,'Baiduspider抓了多少页面并不是最重要的，重要的是有多少页面被建索引库，即我们常说的“建库”。众所周知，搜索引擎的索引库是分层级的，优质的网页会被分配到重要索引库，普通网页',0,'','',''),(8,'禁止百度移动搜索对网页进行转码的方法',1476064353,'在百度移动搜索引擎中，为了更好地满足用户需求，会同时为用户提供PC网页和mobile网页，但目前受交互、兼容和流量等因素影响，PC页在移动终端中的直接浏览体验较差。因此，百度移动搜',0,'','','');
 
 /*Table structure for table `fl_keyword` */
 
@@ -162,22 +143,26 @@ insert  into `fl_keyword`(`id`,`keyword`,`rpurl`) values (1,'优化','http://www
 DROP TABLE IF EXISTS `fl_menu`;
 
 CREATE TABLE `fl_menu` (
-  `id` mediumint(8) NOT NULL AUTO_INCREMENT,
-  `programid` varchar(20) NOT NULL DEFAULT '',
-  `level` varchar(20) NOT NULL DEFAULT '',
-  `model` char(20) NOT NULL DEFAULT '' COMMENT '模块',
-  `action` char(20) NOT NULL DEFAULT '' COMMENT '操作',
-  `with` varchar(10) NOT NULL COMMENT '单页模型用到',
-  `is_show` tinyint(1) NOT NULL COMMENT '后台菜单是否显示',
-  `status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '状态',
-  `name` varchar(50) NOT NULL DEFAULT '' COMMENT '操作名',
-  `listorder` smallint(6) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=356 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` smallint(6) unsigned NOT NULL DEFAULT '0' COMMENT '父级id',
+  `module` varchar(50) DEFAULT '' COMMENT '模型',
+  `controller` varchar(50) DEFAULT '' COMMENT '控制器',
+  `action` varchar(50) NOT NULL DEFAULT '' COMMENT '方法',
+  `data` varchar(50) NOT NULL DEFAULT '' COMMENT '额外参数',
+  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '菜单类型  1：权限认证+菜单；0：只作为菜单',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '状态，1显示，0不显示',
+  `name` varchar(50) NOT NULL COMMENT '菜单名称',
+  `icon` varchar(50) DEFAULT NULL COMMENT '菜单图标',
+  `des` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
+  `listorder` smallint(6) unsigned NOT NULL DEFAULT '50' COMMENT '排序ID',
+  PRIMARY KEY (`id`),
+  KEY `status` (`status`),
+  KEY `parentid` (`pid`)
+) ENGINE=MyISAM AUTO_INCREMENT=104 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
 
 /*Data for the table `fl_menu` */
 
-insert  into `fl_menu`(`id`,`programid`,`level`,`model`,`action`,`with`,`is_show`,`status`,`name`,`listorder`) values (1,'Home','Top','Index','welcome','',1,1,'网站信息',5),(2,'Article','Top','Article','index','',1,1,'文章管理',30),(3,'Member','Top','User','index','',1,1,'会员管理',40),(4,'Userindex','MUser','User','index','',1,1,'会员资料管理',1),(5,'Product','Top','Product','index','',1,1,'商品管理',10),(6,'Order','Top','Order','index','',1,1,'订单管理',50),(9,'Useradd','Userindex','User','add','',0,1,'添加会员',0),(11,'Roleadd','Roleindex','Role','add','',0,1,'添加会员组',0),(47,'Roleindex','MUser','Role','index','',1,1,'会员组管理',3),(58,'Accessindex','Roleindex','Access','index','',0,1,'授权查询',0),(59,'Accessupdate','Roleindex','Access','update','',0,1,'更新权限',0),(84,'Accessinsert','Roleindex','Access','insert','',0,1,'插入权限',0),(125,'Useredit','Userindex','User','edit','',0,1,'会员资料编辑',0),(126,'Userupdate','Userindex','User','update','',0,1,'会员资料提交',0),(127,'Userinsert','Userindex','User','insert','',0,1,'会员插入',0),(128,'Userdeleteall','Userindex','User','deleteall','',0,1,'会员批量删除',0),(129,'Userdelete','Userindex','User','delete','',0,1,'会员删除',0),(130,'Roleinsert','Roleindex','Role','insert','',0,1,'会员组插入',0),(131,'Roleupdate','Roleindex','Role','update','',0,1,'会员组更新',0),(132,'Roleedit','Roleindex','Role','edit','',0,1,'会员组编辑',0),(133,'Roledelete','Roleindex','Role','delete','',0,1,'删除会员组',0),(158,'Indexwelcome','Home','Index','welcome','',1,1,'后台首页',1),(163,'Userinfo','Home','User','info','',1,1,'个人信息',10),(173,'Wbindaccount','Weixin','Weixin','bindaccount','',0,1,'绑定公众账号',0),(181,'Wright','Weixin','Weixin','right','',1,1,'授权设置',0),(182,'Windex','Weixin','Weixin','index','',1,1,'自定义菜单',0),(183,'Wmenuadd','Windex','Weixin','menuadd','',1,1,'添加菜单',0),(191,'Menuindex','Top','Menu','index','',1,1,'菜单管理',100),(192,'Menuadd','Menuindex','Menu','add','',1,1,'新增菜单',1),(193,'Menulistmenu','Menuindex','Menu','list_tree','',1,1,'菜单列表',0),(212,'Userimport','MUser','User','import','',0,1,'会员资料导入',20),(213,'Articlecat','Article','Articlecate','index','',1,1,'文章分类',10),(214,'Articleindex','Article','Article','index','',1,1,'文章列表',20),(215,'Productcategory','Product','Productcate','index','',1,1,'商品分类',10),(216,'Productindex','Product','Product','index','',1,1,'商品列表',20),(217,'Productadd','Product','Product','add','',0,1,'添加新商品',30),(218,'Orderindex','Order','Order','index','',1,1,'订单列表',1),(220,'Articleadd','Articleindex','Article','add','',0,1,'添加文章',20),(222,'Articleadd_category','Articlecat','Articlecate','add_category','',0,1,'添加分类',0),(223,'Productadd_category','Productcategory','Product','add_category','',0,1,'添加分类',0),(224,'Homeadd_ad','bannerList','Home','add','',0,1,'添加广告',21),(226,'Member_classadd','Member_classindex','Member_class','add','',0,1,'添加等级',0),(230,'Orderdelivery','Order','Order','delivery','',1,1,'发货单列表',30),(231,'Orderbacklist','Order','Order','backlist','',1,1,'退货单列表',40),(238,'Brandadd','Brandindex','Brand','add','',1,1,'添加品牌',1),(239,'Hongindex','Extend','Hong','index','',0,1,'优惠券管理',99),(240,'Hongadd','Hongindex','Hong','add','',0,1,'添加优惠券',0),(241,'Drawals','Extend','Drawals','index','',0,1,'提现规则',20),(242,'Drawalsadd','Drawals','Drawals','add','',0,1,'添加规则',0),(243,'Drawalsedit','Drawals','Drawals','edit','',0,1,'编辑规则',0),(244,'Drawalsdelete','Drawals','Drawals','delete','',0,1,'删除规则',0),(249,'Pictureadd','Pictureguide','Picture','add','',1,1,'添加图片',0),(253,'Attributetype','Product','GoodAttribute','index','',1,1,'属性类型',100),(254,'GoodAttributeadd','Attributetype','GoodAttribute','add','',0,1,'添加类型',0),(256,'bannerList','Home','Banner','index','',1,1,'baner列表',0),(257,'bannerCate','banner','Bannercate','index','',0,1,'baner类别',0),(259,'RUser','Member','Member','index','',1,1,'用户组',0),(260,'MUser','Member','User','index','',1,1,'管理组',0),(261,'Extend','Top','Extend','index','',0,1,'扩展功能',70),(262,'RaisePart','Extend','Raise','default','',0,1,'团购优惠',0),(263,'RaiseIndex','RaisePart','Raise','index','',1,1,'活动列表',0),(264,'Raiseadd','RaiseIndex','Raise','add','',0,1,'添加众筹',0),(265,'RaiseRule','RaisePart','RaiseRule','index','',1,1,'优惠规则',0),(266,'RaiseRuleadd','RaiseRule','RaiseRule','add','',0,1,'添加规则',0),(267,'RaiseApply','RaisePart','Raiseapply','index','',1,1,'报名列表',0),(273,'Fundsadd','Fundsindex','Funds','add','',1,1,'发起项目',0),(303,'changepass','Userinfo','User','changePassword','',0,1,'修改密码',0),(318,'advertisecate','Advertise','Advertise','category','',1,1,'广告类别',0),(319,'advertiselist','Advertise','Advertise','indexList','',1,1,'广告列表',0),(329,'Option','Home','Option','index','',0,1,'意见反馈',0),(330,'Jpush','Home','Jpush','index','',0,1,'信息推送',0),(334,'ShopOwner','Member','Shop','index','',0,1,'店铺列表',0),(335,'Parmeter','Extend','Parmeter','Index','',0,1,'参数类型',0),(336,'ProductArticle','Product','ProductArticle','index','',0,1,'产品文案',0),(337,'ProductArticleAdd','ProductArticle','ProductArticle','add','',0,1,'添加文案',0),(339,'InviteCode','Member','InviteCode','index','',0,1,'邀请码',0),(341,'Server','Home','Information','server','',0,1,'服务平台',0),(342,'AboutUs','Home','Information','aboutus','',0,1,'关于我们',0),(343,'Productcomment','Product','Product','comment','',1,1,'评价列表',0),(344,'Orderticket','Order','Order','ticket','',0,1,'取餐码',12),(345,'Orderout','Order','Order','out','',0,1,'堂食订单列表',2),(346,'Logoindex','Home','Logo','index','',1,1,'首页LOGO',12),(347,'Foods','Top','Foods','index','',1,1,'菜谱管理',5),(348,'Foodsindex','Foods','Foods','index','',1,1,'菜谱列表',1),(349,'Foodscategory','Foods','Foods','category','',1,1,'菜谱分类',2),(350,'FoodsProportion','Foods','Foods','Proportion','',1,1,'食材管理',3),(351,'Healthmsg','Top','Healthmsg','index','',1,1,'留言管理',0),(352,'Healthmsgindex','Healthmsg','Healthmsg','index','',1,1,'留言列表',0),(353,'Yuyue','Top','Yuyue','index','',1,1,'预约管理',0),(354,'Yuyueindex','Yuyue','Yuyue','index','',1,1,'预约列表',0),(355,'Yuyuecommentlist','Yuyue','Yuyue','commentlist','',1,1,'预约评论',0);
+insert  into `fl_menu`(`id`,`pid`,`module`,`controller`,`action`,`data`,`type`,`status`,`name`,`icon`,`des`,`listorder`) values (1,0,'Fladmin','Article','fli','',0,1,'文章管理','glyphicon glyphicon-pencil','',0),(6,0,'Fladmin','Sysconfig','fli','',0,1,'设置','glyphicon glyphicon-wrench','',1000),(3,0,'Fladmin','Menu','fli','',0,1,'菜单管理','glyphicon glyphicon-th-list','',20),(4,0,'Fladmin','User','fli','',0,1,'用户管理','glyphicon glyphicon-user','',30),(2,0,'Fladmin','Product','fli','',0,1,'商品管理','glyphicon glyphicon-shopping-cart','',10),(5,0,'Fladmin','Extension','fli','',0,1,'批量维护','glyphicon glyphicon-cloud','',40),(7,5,'Fladmin','Index','welcome','',1,0,'欢迎页面','','',5),(8,5,'Fladmin','Index','index','',1,0,'后台首页','','',2),(9,5,'Fladmin','Index','upconfig','',1,0,'更新系统参数配置','','',3),(10,5,'Fladmin','Index','upcache','',1,0,'更新缓存','','',4),(11,1,'Fladmin','Article','index','',1,1,'文章列表','','',50),(12,1,'Fladmin','Article','add','',1,1,'发布文章','','',50),(13,12,'Fladmin','Article','doadd','',1,0,'发布文章提交','','',50),(14,1,'Fladmin','Article','edit','',1,0,'文章修改','','',50),(15,14,'Fladmin','Article','doedit','',1,0,'文章修改提交','','',50),(16,1,'Fladmin','Article','del','',1,0,'文章删除','','',50),(17,1,'Fladmin','Article','repetarc','',1,1,'重复文档检测','','',50),(18,1,'Fladmin','Article','recommendarc','',1,0,'文章推荐','','',50),(19,1,'Fladmin','Article','articleexists','',1,0,'文章是否存在','','',50),(20,1,'Fladmin','Category','index','',1,1,'文章栏目','','',50),(21,20,'Fladmin','Category','add','',1,0,'文章栏目添加','','',50),(22,21,'Fladmin','Category','doadd','',1,0,'文章栏目添加提交','','',50),(23,20,'Fladmin','Category','edit','',1,0,'文章栏目修改','','',50),(24,23,'Fladmin','Category','doedit','',1,0,'文章栏目修改提交','','',50),(25,20,'Fladmin','Category','del','',1,0,'文章栏目删除','','',50),(26,5,'Fladmin','Tag','index','',1,1,'Tag标签管理','','',50),(27,26,'Fladmin','Tag','add','',1,0,'Tag标签添加','','',50),(28,27,'Fladmin','Tag','doadd','',1,0,'Tag标签添加提交','','',50),(29,26,'Fladmin','Tag','edit','',1,0,'Tag标签修改','','',50),(30,29,'Fladmin','Tag','doedit','',1,0,'Tag标签修改提交','','',50),(31,26,'Fladmin','Tag','del','',1,0,'Tag标签删除','','',50),(32,1,'Fladmin','Page','index','',1,1,'单页管理','','',50),(33,32,'Fladmin','Page','add','',1,0,'单页添加','','',50),(34,33,'Fladmin','Page','doadd','',1,0,'单页添加提交','','',50),(35,32,'Fladmin','Page','edit','',1,0,'单页修改','','',50),(36,35,'Fladmin','Page','doedit','',1,0,'单页修改提交','','',50),(37,32,'Fladmin','Page','del','',1,0,'单页删除','','',50),(38,2,'Fladmin','Product','index','',1,1,'商品列表','','',50),(39,2,'Fladmin','Product','add','',1,1,'商品添加','','',50),(40,39,'Fladmin','Product','doadd','',1,0,'商品添加提交','','',50),(41,2,'Fladmin','Product','edit','',1,0,'商品修改','','',50),(42,41,'Fladmin','Product','doedit','',1,0,'商品修改提交','','',50),(43,2,'Fladmin','Product','del','',1,0,'商品删除','','',50),(44,2,'Fladmin','Product','recommendarc','',1,0,'重复商品','','',50),(45,2,'Fladmin','Product','productexists','',1,0,'商品是否存在','','',50),(46,2,'Fladmin','ProductType','index','',1,1,'商品分类','','',50),(47,46,'Fladmin','ProductType','add','',1,1,'商品分类添加','','',50),(48,47,'Fladmin','ProductType','doadd','',1,0,'商品分类添加提交','','',50),(49,46,'Fladmin','ProductType','edit','',1,0,'商品分类修改','','',50),(50,42,'Fladmin','ProductType','doedit','',1,0,'商品分类修改提交','','',50),(51,46,'Fladmin','ProductType','del','',1,0,'商品分类删除','','',50),(52,5,'Fladmin','Friendlink','index','',1,1,'友情链接','','',50),(53,52,'Fladmin','Friendlink','add','',1,0,'友情链接添加','','',50),(54,53,'Fladmin','Friendlink','doadd','',1,0,'友情链接添加提交','','',50),(55,52,'Fladmin','Friendlink','edit','',1,0,'友情链接修改','','',50),(56,55,'Fladmin','Friendlink','doedit','',1,0,'友情链接修改提交','','',50),(57,52,'Fladmin','Friendlink','del','',1,0,'友情链接删除','','',50),(58,5,'Fladmin','Keyword','index','',1,1,'关键词管理','','',50),(59,58,'Fladmin','Keyword','add','',1,0,'关键词添加','','',50),(60,59,'Fladmin','Keyword','doadd','',1,0,'关键词添加提交','','',50),(61,58,'Fladmin','Keyword','edit','',1,0,'关键词修改','','',50),(62,61,'Fladmin','Keyword','doedit','',1,0,'关键词修改提交','','',50),(63,58,'Fladmin','Keyword','del','',1,0,'关键词删除','','',50),(64,5,'Fladmin','Searchword','index','',1,1,'搜索关键词','','',50),(65,64,'Fladmin','Searchword','add','',1,0,'搜索关键词添加','','',50),(66,65,'Fladmin','Searchword','doadd','',1,0,'搜索关键词添加提交','','',50),(67,64,'Fladmin','Searchword','edit','',1,0,'搜索关键词修改','','',50),(68,67,'Fladmin','Searchword','doedit','',1,0,'搜索关键词修改提交','','',50),(69,64,'Fladmin','Searchword','del','',1,0,'搜索关键词删除','','',50),(70,5,'Fladmin','Slide','index','',1,1,'轮播图','','',50),(71,70,'Fladmin','Slide','add','',1,0,'轮播图添加','','',50),(72,71,'Fladmin','Slide','doadd','',1,0,'轮播图添加提交','','',50),(73,70,'Fladmin','Slide','edit','',1,0,'轮播图修改','','',50),(74,73,'Fladmin','Slide','doedit','',1,0,'轮播图修改提交','','',50),(75,70,'Fladmin','Slide','del','',1,0,'轮播图删除','','',50),(76,5,'Fladmin','Guestbook','index','',1,1,'在线留言','','',50),(77,76,'Fladmin','Guestbook','del','',1,0,'在线留言删除','','',50),(78,6,'Fladmin','Sysconfig','index','',1,1,'系统基本参数','','',50),(79,78,'Fladmin','Sysconfig','add','',1,0,'系统参数添加','','',50),(80,79,'Fladmin','Sysconfig','doadd','',1,0,'系统参数添加提交','','',50),(81,78,'Fladmin','Sysconfig','edit','',1,0,'系统参数修改','','',50),(82,81,'Fladmin','Sysconfig','doedit','',1,0,'系统参数修改提交','','',50),(83,78,'Fladmin','Sysconfig','del','',1,0,'系统参数删除','','',50),(84,4,'Fladmin','User','index','',1,1,'管理员','','',50),(85,84,'Fladmin','User','add','',1,0,'管理员添加','','',50),(86,85,'Fladmin','User','doadd','',1,0,'管理员添加提交','','',50),(87,84,'Fladmin','User','edit','',1,0,'管理员修改','','',50),(88,87,'Fladmin','User','doedit','',1,0,'管理员修改提交','','',50),(89,84,'Fladmin','User','del','',1,0,'管理员删除','','',50),(90,4,'Fladmin','UserRole','index','',1,1,'角色管理','','',50),(91,90,'Fladmin','UserRole','add','',1,0,'角色添加','','',50),(92,91,'Fladmin','UserRole','doadd','',1,0,'角色添加修改','','',50),(93,90,'Fladmin','UserRole','edit','',1,0,'角色修改','','',50),(94,93,'Fladmin','UserRole','doedit','',1,0,'角色修改提交','','',50),(95,90,'Fladmin','UserRole','del','',1,0,'角色删除','','',50),(96,3,'Fladmin','Menu','index','',1,1,'后台菜单','','',50),(97,96,'Fladmin','Menu','add','',1,0,'菜单添加','','',50),(98,97,'Fladmin','Menu','doadd','',1,0,'菜单添加提交','','',50),(99,96,'Fladmin','Menu','edit','',1,0,'菜单修改','','',50),(100,99,'Fladmin','Menu','doedit','',1,0,'菜单修改提交','','',50),(101,96,'Fladmin','Menu','del','',1,0,'菜单删除','','',50),(102,90,'Fladmin','UserRole','permissions','',1,0,'权限设置','','',50),(103,102,'Fladmin','UserRole','dopermissions','',1,0,'权限设置提交','','',50);
 
 /*Table structure for table `fl_order` */
 
@@ -353,11 +338,34 @@ CREATE TABLE `fl_product_type` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `typename` (`typename`),
   UNIQUE KEY `typedir` (`typedir`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 /*Data for the table `fl_product_type` */
 
-insert  into `fl_product_type`(`id`,`reid`,`addtime`,`typename`,`seotitle`,`keywords`,`description`,`content`,`sortrank`,`typedir`,`templist`,`temparticle`,`litpic`,`seokeyword`,`status`) values (1,0,1476063788,'海鲜','新闻中心_72pcms','新闻中心','新闻中心','<p>新闻中心</p>',50,'news','category','detail','/uploads/2016/10/201610100341073966.jpg','新闻中心',1),(2,0,1476063429,'零食','企业新闻_72pcms','企业新闻','企业新闻','<p>企业新闻</p>',50,'qiye','category','detail','','企业新闻',1),(3,1,1476063419,'水果','行业新闻_72pcms','行业新闻','行业新闻','<p>行业新闻</p>',50,'hangye','category','detail','','行业新闻',1),(4,1,1476068069,'咖啡','','','','<p>案例中心内容</p>',50,'case','category','detail','','',1),(6,1,1484914393,'qw','qw','qw','qw','<p>qw</p>',50,'qw','productcategory.html','productdetail.html','','qw',1);
+insert  into `fl_product_type`(`id`,`reid`,`addtime`,`typename`,`seotitle`,`keywords`,`description`,`content`,`sortrank`,`typedir`,`templist`,`temparticle`,`litpic`,`seokeyword`,`status`) values (1,0,1476063788,'海鲜','新闻中心_72pcms','新闻中心','新闻中心','<p>新闻中心</p>',50,'news','category','detail','/uploads/2016/10/201610100341073966.jpg','新闻中心',1),(2,0,1476063429,'零食','企业新闻_72pcms','企业新闻','企业新闻','<p>企业新闻</p>',50,'qiye','category','detail','','企业新闻',1),(3,1,1476063419,'水果','行业新闻_72pcms','行业新闻','行业新闻','<p>行业新闻</p>',50,'hangye','category','detail','','行业新闻',1),(4,1,1476068069,'咖啡','','','','<p>案例中心内容</p>',50,'case','category','detail','','',1),(5,1,1484914393,'qw','qw','qw','qw','<p>qw</p>',50,'qw','productcategory.html','productdetail.html','','qw',1);
+
+/*Table structure for table `fl_searchword` */
+
+DROP TABLE IF EXISTS `fl_searchword`;
+
+CREATE TABLE `fl_searchword` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(36) NOT NULL DEFAULT '' COMMENT '名称',
+  `title` varchar(60) DEFAULT NULL COMMENT 'seo标题',
+  `description` varchar(150) DEFAULT NULL COMMENT '描述',
+  `content` text COMMENT '内容',
+  `pubdate` int(10) DEFAULT '0' COMMENT '添加时间',
+  `keywords` varchar(100) DEFAULT '' COMMENT '关键词',
+  `click` int(10) DEFAULT '0' COMMENT '点击量',
+  `litpic` varchar(100) DEFAULT '' COMMENT '缩略图或封面',
+  `template` varchar(30) DEFAULT NULL COMMENT '模板名称',
+  `filename` varchar(60) DEFAULT NULL COMMENT '别名',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+/*Data for the table `fl_searchword` */
+
+insert  into `fl_searchword`(`id`,`name`,`title`,`description`,`content`,`pubdate`,`keywords`,`click`,`litpic`,`template`,`filename`) values (1,'百度金融2','百度金融title2','百度金融description2','<p>百度金融content2</p>',1496229526,'百度金融keywords2',250,'/uploads/2017/05/201705311643481302.png','tag2','bdjr2'),(2,'李彦宏','李彦宏title','李彦宏description','<p>李彦宏content</p>',1484910609,'李彦宏keywords',361,'','tag','leo'),(3,'asd2','asd2','asd2','<p>asdsa2</p>',1497782139,'asd2',209,'','tag2','asd2'),(4,'wqe','qwe','qweqw','<p>wqeq</p>',1497782174,'qwe',480,'/images/1.jpg','searchword','qwe');
 
 /*Table structure for table `fl_slide` */
 
@@ -368,16 +376,16 @@ CREATE TABLE `fl_slide` (
   `title` varchar(60) NOT NULL DEFAULT '',
   `url` varchar(100) NOT NULL DEFAULT '' COMMENT '跳转的url',
   `target` smallint(2) DEFAULT '0',
-  `group` smallint(2) DEFAULT '0',
+  `group_id` smallint(2) DEFAULT '0',
   `pic` varchar(100) NOT NULL COMMENT '图片地址',
   `rank` int(4) DEFAULT '0' COMMENT '排序',
   `is_show` smallint(1) DEFAULT '0' COMMENT '是否显示，默认0显示',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `fl_slide` */
 
-insert  into `fl_slide`(`id`,`title`,`url`,`target`,`group`,`pic`,`rank`,`is_show`) values (1,'72PCMS','http://www.72p.org/',0,0,'/uploads/2016/12/201612171800224583.jpg',0,0),(2,'炒股入门知识','http://www.pe7.org/',0,0,'/uploads/2016/12/201612171804239092.jpg',50,1),(4,'将很快就会','http://www.baidu.com/',0,6,'/uploads/2016/12/201612171732241499.jpg',89,0);
+insert  into `fl_slide`(`id`,`title`,`url`,`target`,`group_id`,`pic`,`rank`,`is_show`) values (1,'72PCMS','http://www.72p.org/',0,2,'/images/1.jpg',0,0),(2,'炒股入门知识','http://www.pe7.org/',0,1,'/images/2.jpg',50,1),(3,'将很快就会','http://www.baidu.com/',0,66,'/images/3.jpg',88,0);
 
 /*Table structure for table `fl_sysconfig` */
 
@@ -393,7 +401,7 @@ CREATE TABLE `fl_sysconfig` (
 
 /*Data for the table `fl_sysconfig` */
 
-insert  into `fl_sysconfig`(`id`,`varname`,`info`,`value`) values (1,'cms_webname','网站名称','72PCMS企业建站系统'),(2,'cms_basehost','站点根网址','http://www.thinkphp5.com'),(3,'cms_uploads','图片/上传文件默认路径','/uploads'),(4,'cms_css','css默认存放路径','/css'),(5,'cms_js','js默认存放路径','/js'),(6,'cms_indexname','主页链接名','首页'),(7,'cms_powerby','网站版权信息','Copyright &copy; 72PCMS 版权所有'),(8,'cms_imgwidth','缩略图默认宽度','240'),(9,'cms_imgheight','缩略图默认高度','180'),(10,'cms_seotitle','网站seotitle','72pcms是一套完全免费、开源、无授权限制的网站管理系统'),(11,'cms_keywords','网站关键词Keywords','72pcms,无授权限制网站系统cms,免费cms系统,开源网站管理系统,开源cms'),(12,'cms_description','网站描述','72pcms完全免费、开源、无授权限制，您可以使用72pcms在任何商业或者非商业网站上使用而不必支付任何费用，系统采用主流的mvc架构开发，更加容易进行二次开发。'),(13,'cms_iscache','是否开启缓存，1开启，0关闭','1'),(14,'cms_maxarc','最大返回列表结果数，默认300','300'),(15,'cms_pagesize','列表每页显示的数量，默认15','15');
+insert  into `fl_sysconfig`(`id`,`varname`,`info`,`value`) values (1,'cms_webname','网站名称','72PCMS企业建站系统'),(2,'cms_basehost','站点根网址','http://www.72p.org'),(3,'cms_uploads','图片/上传文件默认路径','/uploads'),(4,'cms_css','css默认存放路径','/css'),(5,'cms_js','js默认存放路径','/js'),(6,'cms_indexname','主页链接名','首页'),(7,'cms_powerby','网站版权信息','Copyright &copy; 72PCMS 版权所有'),(8,'cms_imgwidth','缩略图默认宽度','240'),(9,'cms_imgheight','缩略图默认高度','180'),(10,'cms_seotitle','网站seotitle','72pcms是一套完全免费、开源、无授权限制的网站管理系统'),(11,'cms_keywords','网站关键词Keywords','72pcms,无授权限制网站系统cms,免费cms系统,开源网站管理系统,开源cms'),(12,'cms_description','网站描述','72pcms完全免费、开源、无授权限制，您可以使用72pcms在任何商业或者非商业网站上使用而不必支付任何费用，系统采用主流的mvc架构开发，更加容易进行二次开发。'),(13,'cms_iscache','是否开启缓存，1开启，0关闭','1'),(14,'cms_maxarc','最大返回列表结果数，默认300','300'),(15,'cms_pagesize','列表每页显示的数量，默认15','15');
 
 /*Table structure for table `fl_tagindex` */
 
@@ -444,11 +452,11 @@ CREATE TABLE `fl_user` (
   `pwd` char(32) NOT NULL DEFAULT '' COMMENT 'admin',
   `role_id` smallint(4) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `fl_user` */
 
-insert  into `fl_user`(`id`,`username`,`email`,`logintime`,`pwd`,`role_id`) values (1,'admin888','admin@qq.com',1484912495,'21232f297a57a5a743894a0e4a801fc3',1);
+insert  into `fl_user`(`id`,`username`,`email`,`logintime`,`pwd`,`role_id`) values (1,'admin888','admin@qq.com',1484912495,'21232f297a57a5a743894a0e4a801fc3',1),(2,'abc','abc@qq.com',0,'21232f297a57a5a743894a0e4a801fc3',2);
 
 /*Table structure for table `fl_user_role` */
 
@@ -456,17 +464,18 @@ DROP TABLE IF EXISTS `fl_user_role`;
 
 CREATE TABLE `fl_user_role` (
   `id` smallint(4) unsigned NOT NULL AUTO_INCREMENT,
-  `rolename` varchar(30) NOT NULL COMMENT '角色名',
-  `description` varchar(150) NOT NULL DEFAULT '' COMMENT '描述',
-  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态',
-  `pid` smallint(4) NOT NULL DEFAULT '0',
+  `name` varchar(30) NOT NULL COMMENT '角色名',
+  `des` varchar(150) NOT NULL DEFAULT '' COMMENT '描述',
+  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态，0启用，1禁用',
+  `pid` smallint(4) NOT NULL DEFAULT '0' COMMENT '父角色id',
+  `listorder` tinyint(4) DEFAULT '0' COMMENT '排序',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `rolename` (`rolename`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='角色表';
+  UNIQUE KEY `rolename` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='角色表';
 
 /*Data for the table `fl_user_role` */
 
-insert  into `fl_user_role`(`id`,`rolename`,`description`,`status`,`pid`) values (1,'超级管理员','',1,0);
+insert  into `fl_user_role`(`id`,`name`,`des`,`status`,`pid`,`listorder`) values (1,'超级管理员','拥有网站最高管理员权限！',0,0,0),(2,'普通角色','',0,0,0);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

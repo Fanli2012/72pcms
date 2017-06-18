@@ -52,11 +52,11 @@ class TagController extends BaseController
                     M("Taglist")->add($data);
                 }
             }
-            $this->success('添加成功！', '/'.FLADMIN.'/Tag' , 1);
+            $this->success('添加成功！', CMS_ADMIN.'Tag' , 1);
         }
 		else
 		{
-			$this->error('添加失败！请修改后重新添加', '/'.FLADMIN.'/Tag/add' , 3);
+			$this->error('添加失败！请修改后重新添加', CMS_ADMIN.'Tag/add' , 3);
 		}
     }
     
@@ -137,25 +137,25 @@ class TagController extends BaseController
                 }
             }
             
-            $this->success('修改成功！', '/'.FLADMIN.'/Tag' , 1);
+            $this->success('修改成功！', CMS_ADMIN.'Tag' , 1);
         }
 		else
 		{
-			$this->error('修改失败！', '/'.FLADMIN.'/Tag/edit?id='.$_POST["id"] , 3);
+			$this->error('修改失败！', CMS_ADMIN.'Tag/edit?id='.$_POST["id"] , 3);
 		}
     }
     
 	public function del()
     {
-		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交','/'.FLADMIN.'/Tag' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
+		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交',CMS_ADMIN.'Tag' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
 		
 		if(M("Tagindex")->where("id=$id")->delete())
         {
-            $this->success('删除成功', '/'.FLADMIN.'/Tag' , 1);
+            $this->success('删除成功', CMS_ADMIN.'Tag' , 1);
         }
 		else
 		{
-			$this->error('删除失败！请重新提交', '/'.FLADMIN.'/Tag', 3);
+			$this->error('删除失败！请重新提交', CMS_ADMIN.'Tag', 3);
 		}
     }
 }

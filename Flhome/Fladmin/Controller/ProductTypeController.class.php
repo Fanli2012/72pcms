@@ -43,11 +43,11 @@ class ProductTypeController extends BaseController
         
 		if(M('ProductType')->add($_POST))
         {
-            $this->success('添加成功！', '/'.FLADMIN.'/ProductType' , 1);
+            $this->success('添加成功！', CMS_ADMIN.'ProductType' , 1);
         }
 		else
 		{
-			$this->error('添加失败！请修改后重新添加', '/'.FLADMIN.'/ProductType' , 3);
+			$this->error('添加失败！请修改后重新添加', CMS_ADMIN.'ProductType' , 3);
 		}
     }
     
@@ -73,23 +73,23 @@ class ProductTypeController extends BaseController
         
 		if(M('ProductType')->where("id=$id")->save($_POST))
         {
-            $this->success('修改成功！', '/'.FLADMIN.'/ProductType' , 1);
+            $this->success('修改成功！', CMS_ADMIN.'ProductType' , 1);
         }
 		else
 		{
-			$this->error('修改失败！请修改后重新添加', '/'.FLADMIN.'/ProductType/edit?id='.$_POST["id"] , 3);
+			$this->error('修改失败！请修改后重新添加', CMS_ADMIN.'ProductType/edit?id='.$_POST["id"] , 3);
 		}
     }
     
     public function del()
     {
-		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交','/'.FLADMIN.'/ProductType' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
+		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交',CMS_ADMIN.'ProductType' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
 		
 		$ProductType = M('ProductType');
 		
 		if($ProductType->where("reid=$id")->find())
 		{
-			$this->error('删除失败！请先删除子分类', '/'.FLADMIN.'/ProductType', 3);
+			$this->error('删除失败！请先删除子分类', CMS_ADMIN.'ProductType', 3);
 		}
 		else
 		{
@@ -104,24 +104,24 @@ class ProductTypeController extends BaseController
 					if($Product->where("typeid=$id")->delete())
 					{
 						$ProductType->commit(); // 提交事务
-						$this->success('删除成功', '/'.FLADMIN.'/ProductType' , 1);
+						$this->success('删除成功', CMS_ADMIN.'ProductType' , 1);
 					}
 					else
 					{
 						$ProductType->rollback(); // 事务回滚
-						$this->error('分类下的商品删除失败！', '/'.FLADMIN.'/ProductType', 3);
+						$this->error('分类下的商品删除失败！', CMS_ADMIN.'ProductType', 3);
 					}
 				}
 				else
 				{
 					$ProductType->commit(); // 提交事务
-					$this->success('删除成功', '/'.FLADMIN.'/ProductType' , 1);
+					$this->success('删除成功', CMS_ADMIN.'ProductType' , 1);
 				}
 			}
 			else
 			{
 				$ProductType->rollback(); // 事务回滚
-				$this->error('删除失败！请重新提交', '/'.FLADMIN.'/ProductType', 3);
+				$this->error('删除失败！请重新提交', CMS_ADMIN.'ProductType', 3);
 			}
 		}
     }

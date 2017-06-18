@@ -1,9 +1,7 @@
-<!DOCTYPE html><html><head><title><if condition="$action_name=='add'">添加<else/>修改</if>分类_后台管理</title><include file="./Flhome/Fladmin/View/header.html" />
-<div class="container-fluid">
-<div class="row">
-<!-- 左边开始 --><div class="col-sm-3 col-md-2 sidebar"><include file="./Flhome/Fladmin/View/leftmenu.html" /></div><!-- 左边结束 -->
+<extend name="./Flhome/Fladmin/View/base.html" />
+<block name="title">商品分类<if condition="$action_name=='add'">添加<else/>修改</if></block>
 
-<!-- 右边开始 --><div class="col-sm-9 col-md-10 rightbox"><div id="mainbox">
+<block name="content">
 <h5 class="sub-header"><a href="/Fladmin/ProductType">分类管理</a> > <if condition="$action_name=='add'">添加<else/>修改</if>分类</h5>
 
 <form method="post" action="/Fladmin/ProductType/<if condition="$action_name=='add'">doadd<else/>doedit</if>" role="form" id="addcat" class="table-responsive">
@@ -94,8 +92,6 @@
   </tbody>
 </table>
 </form><!-- 表单结束 -->
-</div></div><!-- 右边结束 --></div></div>
-
 <script>
 $(function(){
     $(".required").blur(function(){
@@ -139,40 +135,6 @@ $('#addcat input[type="submit"]').click(function(){
     if(numError){
         return false;
     }
-
-    //$("#contents").val = ue.getContent();
-    //var datas = $('#addcat').serialize();//#form要在form里面
-
-    //var content = ue.getContent();
-    /* $.ajax({
-        url: "/Fladmin/ProductType/doedit",
-        type: "POST",
-        dataType: "json",
-        data: {
-            "id":$("#id").val(),
-            "typename":$("#typename").val(),
-            "typedir":$("#typedir").val(),
-            "templist":$("#templist").val(),
-            "temparticle":$("#temparticle").val(),
-            "litpic":$("#litpic").val(),
-            "seotitle":$("#seotitle").val(),
-            "keywords":$("#keywords").val(),
-            "seokeyword":$("#seokeyword").val(),
-            "description":$("#description").val(),
-            "content":content
-            //"seotitle":seotitle.replace("'", "&#039;"),
-            //"keywords":keywords.replace("'", "&#039;"),
-            //"description":description.replace("'", "&#039;"),
-            //"contents":content.replace("'", "&#039;")
-        },
-        success: function(data){
-            if(data.code==200)
-            {
-                //alert(data.info);
-                window.location.replace("/Fladmin/ProductType");
-            }
-        }
-    }); */
 });
 </script>
-</body></html>
+</block>

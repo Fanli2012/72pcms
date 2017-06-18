@@ -1,9 +1,7 @@
-<!DOCTYPE html><html><head><title>重复文档列表_后台管理</title><include file="./Flhome/Fladmin/View/header.html" />
-<div class="container-fluid">
-<div class="row">
-<!-- 左边开始 --><div class="col-sm-3 col-md-2 sidebar"><include file="./Flhome/Fladmin/View/leftmenu.html" /></div><!-- 左边结束 -->
+<extend name="./Flhome/Fladmin/View/base.html" />
+<block name="title">重复文档列表</block>
 
-<!-- 右边开始 --><div class="col-sm-9 col-md-10 rightbox"><div id="mainbox">
+<block name="content">
 <h2 class="sub-header">重复文档列表</h2>[ <a href="/Fladmin/Article">文章列表</a> ] [ <a href="/Fladmin/Article/add">发布文章</a> ]<br><br>
 
 <form name="listarc">
@@ -22,5 +20,4 @@
 </tbody>
 </table></div><!-- 表格结束 --></form><!-- 表单结束 -->
 
-</div></div><!-- 右边结束 --></div></div>
-</body></html>
+</block>

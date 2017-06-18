@@ -131,11 +131,11 @@ class ArticleController extends BaseController
         
 		if($Article->data($_POST)->add())
         {
-            $this->success('添加成功！', '/'.FLADMIN.'/Article' , 1);
+            $this->success('添加成功！', CMS_ADMIN.'Article' , 1);
         }
 		else
 		{
-			$this->error('添加失败！请修改后重新添加', '/'.FLADMIN.'/Article/add' , 3);
+			$this->error('添加失败！请修改后重新添加', CMS_ADMIN.'Article/add' , 3);
 		}
     }
     
@@ -205,30 +205,30 @@ class ArticleController extends BaseController
         {
             if(!empty($_POST['ischeck']))
             {
-                $this->success('修改成功！', '/'.FLADMIN.'/Article?ischeck=1' , 1);
+                $this->success('修改成功！', CMS_ADMIN.'Article?ischeck=1' , 1);
             }
             else
             {
-                $this->success('修改成功！', '/'.FLADMIN.'/Article' , 1);
+                $this->success('修改成功！', CMS_ADMIN.'Article' , 1);
             }
         }
 		else
 		{
-			$this->error('修改失败！', '/'.FLADMIN.'/Article/edit?id='.$id, 3);
+			$this->error('修改失败！', CMS_ADMIN.'Article/edit?id='.$id, 3);
 		}
     }
     
     public function del()
     {
-		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交','/'.FLADMIN.'/Article' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
+		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交', CMS_ADMIN.'Article' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
 		
 		if(M("Article")->where("id in ($id)")->delete())
         {
-            $this->success("$id ,删除成功", '/'.FLADMIN.'/Article' , 1);
+            $this->success("$id ,删除成功", CMS_ADMIN.'Article' , 1);
         }
 		else
 		{
-			$this->error("$id ,删除失败！请重新提交", '/'.FLADMIN.'/Article', 3);
+			$this->error("$id ,删除失败！请重新提交", CMS_ADMIN.'Article', 3);
 		}
     }
     
@@ -241,18 +241,18 @@ class ArticleController extends BaseController
 	
 	public function recommendarc()
     {
-		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交','/'.FLADMIN.'/Article' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
+		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交',CMS_ADMIN.'Article' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
 		
 		$Article = M("Article");
 		$data['tuijian'] = 1;
 
         if($Article->where("id in ($id)")->save($data))
         {
-            $this->success("$id ,推荐成功", '/'.FLADMIN.'/Article', 1);
+            $this->success("$id ,推荐成功", CMS_ADMIN.'Article', 1);
         }
 		else
 		{
-			$this->error("$id ,推荐失败！请重新提交", '/'.FLADMIN.'/Article', 3);
+			$this->error("$id ,推荐失败！请重新提交", CMS_ADMIN.'Article', 3);
 		}
     }
     

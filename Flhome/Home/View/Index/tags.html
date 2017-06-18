@@ -10,12 +10,12 @@
 <h1 class="page-header">最新标签</h1>
 
 <?php $posts=tagslist(); foreach($posts as $row) { ?>
-<a target="_blank" href="/tag<?php echo $row['id']; ?>.html"><?php echo $row['tag']; ?></a>&nbsp;
+<a href="/tag<?php echo $row['id']; ?>.html"><?php echo $row['tag']; ?></a>&nbsp;
 <?php } ?>
 
 <h2>随机标签</h2>
 <?php $posts=tagslist(array("row"=>30,"orderby"=>"rand()")); foreach($posts as $row) { ?>
-<a target="_blank" href="/tag<?php echo $row['id']; ?>.html"><?php echo $row['tag']; ?></a>&nbsp;
+<a href="/tag<?php echo $row['id']; ?>.html"><?php echo $row['tag']; ?></a>&nbsp;
 <?php } ?>
 </div><!--/.col-xs-12.col-sm-9-->
 
