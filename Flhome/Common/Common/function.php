@@ -378,7 +378,7 @@ function pagenav(array $param)
 //根据总数与每页条数，获取总页数
 function get_totalpage(array $param)
 {
-	if(!empty($param['pagesize'] || $param['pagesize']==0)){$pagesize=$param["pagesize"];}else{$pagesize=cms_pagesize;}
+	if(isset($param['pagesize']) || $param['pagesize']==0){$pagesize=$param["pagesize"];}else{$pagesize=cms_pagesize;}
 	$counts=$param["counts"];
 	
 	//取总数据量除以每页数的余数
