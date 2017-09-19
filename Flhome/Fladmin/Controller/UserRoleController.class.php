@@ -73,7 +73,7 @@ class UserRoleController extends BaseController
     {
 		if(!empty($_GET["id"])){$role_id = $_GET["id"];}else{$this->error('您访问的页面不存在或已被删除！');}
 		
-		$menu = [];
+		$menu = array();
 		$access = M('access')->where('role_id='.$role_id)->select();
 		if($access)
 		{
@@ -102,15 +102,15 @@ class UserRoleController extends BaseController
 	//角色权限设置
 	public function dopermissions()
     {
-		$menus = [];
+		$menus = array();
 		if($_POST['menuid'] && $_POST['role_id'])
 		{
 			foreach($_POST['menuid'] as $row)
 			{
-				$menus[] = [
+				$menus[] = array(
 					'role_id' => $_POST['role_id'],
 					'menu_id' => $row
-				];
+				);
 			}
 		}
 		else

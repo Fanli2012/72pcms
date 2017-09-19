@@ -14,7 +14,7 @@ class BaseController extends CommonController
 		parent::_initialize();
         
         //权限验证
-        /* if(session('admin_user_info')['role_id'] <> 1)
+        /* if($_SESSION['admin_user_info']['role_id'] <> 1)
         {
             $this->check();
         } */

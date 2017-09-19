@@ -21,8 +21,9 @@ class CommonController extends Controller
             $this->user_info = session('admin_user_info');
         }
 		
+        $admin_user_info = session('admin_user_info');
 		//判断是否拥有权限
-		if(session('admin_user_info')['role_id'] <> 1)
+		if($admin_user_info['role_id'] <> 1)
 		{
 			$uncheck = array('Fladmin/Index/index','Fladmin/Index/upconfig','Fladmin/Index/upcache','Fladmin/Index/welcome');
 
@@ -32,10 +33,10 @@ class CommonController extends Controller
 			}
 			else
 			{
-				$menu_id = M('menu')->where(['module'=>MODULE_NAME, 'controller'=>CONTROLLER_NAME, 'action'=>ACTION_NAME])->getField('id');
+				$menu_id = M('menu')->where(array('module'=>MODULE_NAME, 'controller'=>CONTROLLER_NAME, 'action'=>ACTION_NAME))->getField('id');
 				if(!$menu_id){$this->error('你没有权限访问，请联系管理员！', CMS_ADMIN, 3);}
 				
-				$check = M('access')->where(['role_id' => session('admin_user_info')['role_id'], 'menu_id' => $menu_id])->find();
+				$check = M('access')->where(array('role_id' => $admin_user_info['role_id'], 'menu_id' => $menu_id))->find();
 				
 				if(!$check)
 				{

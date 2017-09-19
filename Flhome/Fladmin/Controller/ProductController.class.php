@@ -84,7 +84,7 @@ class ProductController extends BaseController
         $litpic="";if(!empty($_POST["litpic"])){$litpic = $_POST["litpic"];}else{$_POST['litpic']="";} //缩略图
         if(empty($_POST["description"])){if(!empty($_POST["body"])){$_POST['description']=cut_str($_POST["body"]);}} //description
         $_POST['addtime'] = $_POST['pubdate'] = time(); //添加&更新时间
-		$_POST['user_id'] = session('admin_user_info')['id']; // 发布者id
+		$_POST['user_id'] = $_SESSION['admin_user_info']['id']; // 发布者id
 		
 		//关键词
         if(!empty($_POST["keywords"]))
@@ -130,7 +130,7 @@ class ProductController extends BaseController
         $litpic="";if(!empty($_POST["litpic"])){$litpic = $_POST["litpic"];}else{$_POST['litpic']="";} //缩略图
         if(empty($_POST["description"])){if(!empty($_POST["body"])){$_POST['description']=cut_str($_POST["body"]);}}//description
         $_POST['pubdate'] = time();//更新时间
-        $_POST['user_id'] = session('admin_user_info')['id']; // 修改者id
+        $_POST['user_id'] = $_SESSION['admin_user_info']['id']; // 修改者id
 		
 		//关键词
         if(!empty($_POST["keywords"]))

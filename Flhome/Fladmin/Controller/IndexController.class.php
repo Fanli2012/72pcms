@@ -6,7 +6,7 @@ class IndexController extends BaseController
 {
 	public function index()
 	{
-		$this->menus = D('Menu')->getPermissionsMenu(session('admin_user_info')['role_id']);
+		$this->menus = D('Menu')->getPermissionsMenu($_SESSION['admin_user_info']['role_id']);
 		
         $this->display();
     }

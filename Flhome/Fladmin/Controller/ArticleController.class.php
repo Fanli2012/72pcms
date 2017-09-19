@@ -82,7 +82,7 @@ class ArticleController extends BaseController
         $content="";if(!empty($_POST["content"])){$content = $_POST["content"];}
         $_POST['pubdate'] = time();//更新时间
         $_POST['addtime'] = time();//添加时间
-		$_POST['user_id'] = session('admin_user_info')['id']; // 发布者id
+		$_POST['user_id'] = $_SESSION['admin_user_info']['id']; // 发布者id
         
 		//关键词
         if(!empty($_POST["keywords"]))
@@ -155,7 +155,7 @@ class ArticleController extends BaseController
         if(empty($_POST["description"])){if(!empty($_POST["content"])){$_POST['description']=cut_str($_POST["content"]);}} //description
         $content="";if(!empty($_POST["content"])){$content = $_POST["content"];}
         $_POST['pubdate'] = time();//更新时间
-        $_POST['user_id'] = session('admin_user_info')['id']; // 修改者id
+        $_POST['user_id'] = $_SESSION['admin_user_info']['id']; // 修改者id
         
 		if(!empty($_POST["keywords"]))
 		{

@@ -50,7 +50,7 @@ class MenuModel extends Model
 	//获取后台管理员所具有权限的菜单列表
 	public function getPermissionsMenu($role_id, $pid=0, $pad=0)
 	{
-		$res = [];
+		$res = array();
 		
 		$where['fl_access.role_id'] = $role_id;
 		$where['fl_menu.pid'] = $pid;
