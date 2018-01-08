@@ -27,7 +27,7 @@ class MenuController extends BaseController
 		$menuid = M('menu')->data($_POST)->add();
 		if($menuid)
         {
-			M('access')->data(['role_id' => 1, 'menu_id' => $menuid])->add();
+			M('access')->data(array('role_id' => 1, 'menu_id' => $menuid))->add();
 			
 			$this->success('添加成功！', CMS_ADMIN.'Menu' , 1);
         }
