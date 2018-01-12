@@ -1,6 +1,4 @@
 <?php
-require_once 'common.inc.php';//引入配置文件
-
 return array(
     //'配置项'=>'配置值'
     
@@ -18,6 +16,8 @@ return array(
 	
     // 显示页面Trace信息
     //'SHOW_PAGE_TRACE' =>true,
+    
+    'URL_HTML_SUFFIX' => '',//去掉U方法生成的链接的.html后缀
     
     // 开启路由，如果规则含有/，记得加转义
     'URL_ROUTER_ON' => true,

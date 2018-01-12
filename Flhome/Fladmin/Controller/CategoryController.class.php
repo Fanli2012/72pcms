@@ -46,11 +46,11 @@ class CategoryController extends BaseController
         
 		if(M('Arctype')->data($data)->add())
         {
-            $this->success('添加成功！', CMS_ADMIN.'Category' , 1);
+            $this->success('添加成功！', U('Category/index'), 1);
         }
 		else
 		{
-			$this->error('添加失败！请修改后重新添加', CMS_ADMIN.'Category' , 3);
+			$this->error('添加失败！请修改后重新添加', U('Category/index'), 3);
 		}
     }
     
@@ -86,23 +86,23 @@ class CategoryController extends BaseController
         
 		if(M('Arctype')->where("id=$id")->save($data))
         {
-            $this->success('修改成功！', CMS_ADMIN.'Category' , 1);
+            $this->success('修改成功！', U('Category/index'), 1);
         }
 		else
 		{
-			$this->error('修改失败！请修改后重新添加', CMS_ADMIN.'Category/edit?id='.$_POST["id"] , 3);
+			$this->error('修改失败！请修改后重新添加', U('Category/edit',array('id'=>$_POST["id"])), 3);
 		}
     }
     
     public function del()
     {
-		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交',CMS_ADMIN.'Category' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
+		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交', U('Category/index'), 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
 		
 		$Arctype = M('Arctype');
 		
 		if($Arctype->where("reid=$id")->find())
 		{
-			$this->error('删除失败！请先删除子栏目', CMS_ADMIN.'Category', 3);
+			$this->error('删除失败！请先删除子栏目', U('Category/index'), 3);
 		}
 		else
 		{
@@ -117,24 +117,24 @@ class CategoryController extends BaseController
 					if($Article->where("typeid=$id")->delete())
 					{
 						$Arctype->commit(); // 提交事务
-						$this->success('删除成功', CMS_ADMIN.'Category' , 1);
+						$this->success('删除成功', U('Category/index'), 1);
 					}
 					else
 					{
 						$Arctype->rollback(); // 事务回滚
-						$this->error('栏目下的文章删除失败！', CMS_ADMIN.'Category', 3);
+						$this->error('栏目下的文章删除失败！', U('Category/index'), 3);
 					}
 				}
 				else
 				{
 					$Arctype->commit(); // 提交事务
-					$this->success('删除成功', CMS_ADMIN.'Category' , 1);
+					$this->success('删除成功', U('Category/index'), 1);
 				}
 			}
 			else
 			{
 				$Arctype->rollback(); // 事务回滚
-				$this->error('删除失败！请重新提交', CMS_ADMIN.'Category', 3);
+				$this->error('删除失败！请重新提交', U('Category/index'), 3);
 			}
 		}
     }

@@ -100,7 +100,7 @@ class ArticleController extends BaseController
 			}
 		}
 		
-		if($_POST["dellink"] && !empty($content)){$content=replacelinks($content,array(cms_basehost));} //删除非站内链接
+		if($_POST["dellink"] && !empty($content)){$content=replacelinks($content,array(sysconfig('cms_basehost')));} //删除非站内链接
 		$_POST['body']=$content;
 		
 		//提取第一个图片为缩略图
@@ -120,7 +120,7 @@ class ArticleController extends BaseController
 				$image = new \Think\Image(); 
 				$image->open($imagepath);
 				// 按照原图的比例生成一个最大为240*180的缩略图
-				$image->thumb(cms_imgwidth, cms_imgheight)->save($saveimage);
+				$image->thumb(sysconfig('cms_imgwidth'), sysconfig('cms_imgheight'))->save($saveimage);
 				
 				//缩略图路径
 				$_POST['litpic']='/uploads/'.date('Y/m',time()).'/'.basename($imagepath,'.'.$out[2][0]).'-lp.'.$out[2][0];
@@ -131,11 +131,11 @@ class ArticleController extends BaseController
         
 		if($Article->data($_POST)->add())
         {
-            $this->success('添加成功！', CMS_ADMIN.'Article' , 1);
+            $this->success('添加成功！', U('Article/index') , 1);
         }
 		else
 		{
-			$this->error('添加失败！请修改后重新添加', CMS_ADMIN.'Article/add' , 3);
+			$this->error('添加失败！请修改后重新添加', U('Article/add'), 3);
 		}
     }
     
@@ -172,7 +172,7 @@ class ArticleController extends BaseController
 			}
 		}
 		
-		if($_POST["dellink"] && !empty($content)){$content=replacelinks($content,array(cms_basehost));} //删除非站内链接
+		if($_POST["dellink"] && !empty($content)){$content=replacelinks($content,array(sysconfig('cms_basehost')));} //删除非站内链接
 		$_POST['body']=$content;
 		
 		//提取第一个图片为缩略图
@@ -192,7 +192,7 @@ class ArticleController extends BaseController
 				$image = new \Think\Image(); 
 				$image->open($imagepath);
 				// 按照原图的比例生成一个最大为240*180的缩略图
-				$image->thumb(cms_imgwidth, cms_imgheight)->save($saveimage);
+				$image->thumb(sysconfig('cms_imgwidth'), sysconfig('cms_imgheight'))->save($saveimage);
 				
 				//缩略图路径
 				$_POST['litpic']='/uploads/'.date('Y/m',time()).'/'.basename($imagepath,'.'.$out[2][0]).'-lp.'.$out[2][0];
@@ -205,30 +205,30 @@ class ArticleController extends BaseController
         {
             if(!empty($_POST['ischeck']))
             {
-                $this->success('修改成功！', CMS_ADMIN.'Article?ischeck=1' , 1);
+                $this->success('修改成功！', U('Article/index',array('ischeck'=>1)), 1);
             }
             else
             {
-                $this->success('修改成功！', CMS_ADMIN.'Article' , 1);
+                $this->success('修改成功！', U('Article/index'), 1);
             }
         }
 		else
 		{
-			$this->error('修改失败！', CMS_ADMIN.'Article/edit?id='.$id, 3);
+			$this->error('修改失败！', U('Article/edit',array('id'=>$id)), 3);
 		}
     }
     
     public function del()
     {
-		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交', CMS_ADMIN.'Article' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
+		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交', U('Article/index'), 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
 		
 		if(M("Article")->where("id in ($id)")->delete())
         {
-            $this->success("$id ,删除成功", CMS_ADMIN.'Article' , 1);
+            $this->success("$id ,删除成功", U('Article/index'), 1);
         }
 		else
 		{
-			$this->error("$id ,删除失败！请重新提交", CMS_ADMIN.'Article', 3);
+			$this->error("$id ,删除失败！请重新提交", U('Article/index'), 3);
 		}
     }
     
@@ -241,18 +241,18 @@ class ArticleController extends BaseController
 	
 	public function recommendarc()
     {
-		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交',CMS_ADMIN.'Article' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
+		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交', U('Article/index'), 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
 		
 		$Article = M("Article");
 		$data['tuijian'] = 1;
 
         if($Article->where("id in ($id)")->save($data))
         {
-            $this->success("$id ,推荐成功", CMS_ADMIN.'Article', 1);
+            $this->success("$id ,推荐成功", U('Article/index'), 1);
         }
 		else
 		{
-			$this->error("$id ,推荐失败！请重新提交", CMS_ADMIN.'Article', 3);
+			$this->error("$id ,推荐失败！请重新提交", U('Article/index'), 3);
 		}
     }
     

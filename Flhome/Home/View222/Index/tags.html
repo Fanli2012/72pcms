@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>标签_<?php echo cms_webname; ?></title>
+<title>标签_<?php echo sysconfig('cms_webname'); ?></title>
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/prettify.css">
 <link rel="stylesheet" href="/css/doc.css">
@@ -8,7 +8,7 @@
 <include file="./Flhome/Home/View/header.html" />
 <div class="container"><div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<div class="bread"><a href="/"><?php echo cms_indexname; ?></a> > 标签</div>
+<div class="bread"><a href="/"><?php echo sysconfig('cms_indexname'); ?></a> > 标签</div>
 <h1 class="page-header">最新标签</h1>
 
 <?php $posts=tagslist(); foreach($posts as $row) { ?>

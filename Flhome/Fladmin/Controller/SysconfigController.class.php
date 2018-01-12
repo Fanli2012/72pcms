@@ -30,11 +30,11 @@ class SysconfigController extends BaseController
 		if($data['varname']!="" && $Sysconfig->data($data)->add())
         {
             updateconfig(M("Sysconfig")->select());
-            $this->success('添加成功！', CMS_ADMIN.'Sysconfig' , 1);
+            $this->success('添加成功！', U('Sysconfig/index'), 1);
         }
 		else
 		{
-			$this->error('添加失败！请修改后重新添加', CMS_ADMIN.'Sysconfig/add' , 3);
+			$this->error('添加失败！请修改后重新添加', U('Sysconfig/add'), 3);
 		}
     }
     
@@ -74,25 +74,25 @@ class SysconfigController extends BaseController
 		if($data['varname']!="" && $Sysconfig->where("id=$id")->save($data))
         {
             updateconfig(M("Sysconfig")->select());
-            $this->success('更新成功！', CMS_ADMIN.'Sysconfig' , 1);
+            $this->success('更新成功！', U('Sysconfig/index'), 1);
         }
 		else
 		{
-			$this->error('更新失败！请修改后重新提交', CMS_ADMIN.'Sysconfig/edit?id='.$_POST["id"] , 3);
+			$this->error('更新失败！请修改后重新提交', U('Sysconfig/edit',array('id'=>$_POST["id"])), 3);
 		}
     }
     
     public function del()
     {
-		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交',CMS_ADMIN.'Sysconfig' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
+		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交', U('Sysconfig/index'), 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
 		
 		if(M("Sysconfig")->where("id=$id")->delete())
         {
-            $this->success('删除成功', CMS_ADMIN.'Sysconfig' , 1);
+            $this->success('删除成功', U('Sysconfig/index'), 1);
         }
 		else
 		{
-			$this->error('删除失败！请重新提交', CMS_ADMIN.'Sysconfig', 3);
+			$this->error('删除失败！请重新提交', U('Sysconfig/index'), 3);
 		}
     }
 }

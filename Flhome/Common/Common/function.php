@@ -104,7 +104,7 @@ function arclist(array $param)
 	if(!empty($param['tuijian'])){$map['tuijian']=$param['tuijian'];}
 	if(!empty($param['typeid'])){$map['typeid']=$param['typeid'];}
 	if(!empty($param['image'])){$map['litpic']=array('NEQ','');}
-	if(!empty($param['limit'])){$limit=$param['limit'];}else{if(!empty($param['row'])){$limit="0,".$param['row'];}else{$limit='0,'.cms_pagesize;}}
+	if(!empty($param['limit'])){$limit=$param['limit'];}else{if(!empty($param['row'])){$limit="0,".$param['row'];}else{$limit='0,'.sysconfig('cms_pagesize');}}
 	if(!empty($param['orderby'])){$orderby=$param['orderby'];}else{$orderby='id desc';}
 	
 	if(!empty($param['sql']))
@@ -378,7 +378,7 @@ function pagenav(array $param)
 //根据总数与每页条数，获取总页数
 function get_totalpage(array $param)
 {
-	if(isset($param['pagesize']) || $param['pagesize']==0){$pagesize=$param["pagesize"];}else{$pagesize=cms_pagesize;}
+	if(isset($param['pagesize']) || $param['pagesize']==0){$pagesize=$param["pagesize"];}else{$pagesize=sysconfig('cms_pagesize');}
 	$counts=$param["counts"];
 	
 	//取总数据量除以每页数的余数
@@ -780,6 +780,39 @@ function dir_delete($dir)
     
     closedir($handle);
     return @rmdir($dir);
+}
+
+//读取动态配置
+function sysconfig($varname='')
+{
+	$sysconfig = S('sysconfig');
+	$res = '';
+	
+	if(empty($sysconfig))
+	{
+		S('sysconfig',null);
+        
+		$sysconfig = M('sysconfig')->field('varname,value')->order('id desc')->select();
+        
+		S('sysconfig',$sysconfig,86400);
+	}
+	
+	if($varname != '')
+	{
+		foreach($sysconfig as $row)
+		{
+			if($varname == $row['varname'])
+			{
+				$res = $row['value'];
+			}
+		}
+	}
+	else
+	{
+		$res = $sysconfig;
+	}
+	
+	return $res;
 }
 
 //从HTML文档中获得全部图片

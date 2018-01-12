@@ -11,7 +11,7 @@ class LoginController extends Controller
 	{
 		if(session('?admin_user_info'))
 		{
-			header("Location: ".CMS_ADMIN);
+			header("Location: ".U('Index/index'));
 			exit;
 		}
         $this->display();
@@ -34,11 +34,11 @@ class LoginController extends Controller
             session("username", $User['username']);
             session("uid", $User["id"]);
             session("admin_user_info", $User);
-			$this->success('登录成功！', CMS_ADMIN , 1);
+			$this->success('登录成功！', U('Index/index'), 1);
         }
         else
         {
-            $this->error('用户名或密码错误！！', CMS_ADMIN.'Login' ,3);
+            $this->error('用户名或密码错误！！', U('Login/index'),3);
         }
     }
 
@@ -57,11 +57,11 @@ class LoginController extends Controller
         
         if(M('user')->where("id=1")->save($data))
         {
-            $this->success('密码恢复成功！', CMS_ADMIN.'Login' , 1);
+            $this->success('密码恢复成功！', U('Login/index'), 1);
         }
 		else
 		{
-			$this->error('密码恢复失败！', CMS_ADMIN.'Login' , 3);
+			$this->error('密码恢复失败！', U('Login/index'), 3);
 		}
     }
     

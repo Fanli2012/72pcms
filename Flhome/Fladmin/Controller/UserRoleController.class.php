@@ -21,11 +21,11 @@ class UserRoleController extends BaseController
     {
 		if(M('user_role')->data($_POST)->add())
         {
-			$this->success('添加成功！', CMS_ADMIN.'UserRole' , 1);
+			$this->success('添加成功！', U('UserRole/index'), 1);
         }
 		else
 		{
-			$this->error('添加失败！请修改后重新添加', CMS_ADMIN.'UserRole' , 3);
+			$this->error('添加失败！请修改后重新添加', U('UserRole/index'), 3);
 		}
     }
     
@@ -46,11 +46,11 @@ class UserRoleController extends BaseController
         
 		if(M('user_role')->where('id='.$id)->save($_POST))
         {
-            $this->success('修改成功！', CMS_ADMIN.'UserRole' , 1);
+            $this->success('修改成功！', U('UserRole/index'), 1);
         }
 		else
 		{
-			$this->error('修改失败！', CMS_ADMIN.'UserRole' , 3);
+			$this->error('修改失败！', U('UserRole/index'), 3);
 		}
     }
 	

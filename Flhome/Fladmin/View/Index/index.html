@@ -1,14 +1,14 @@
-<!DOCTYPE html><html><head><title><?php echo cms_webname; ?>后台管理</title>
+<!DOCTYPE html><html><head><title><?php echo sysconfig('cms_webname'); ?>后台管理</title>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="<?php echo cms_basehost; ?>/css/bootstrap.min.css"><link rel="stylesheet" href="<?php echo cms_basehost; ?>/css/admin.css">
-<script src="<?php echo cms_basehost; ?>/js/jquery.min.js"></script><script src="<?php echo cms_basehost; ?>/js/respond.min.js"></script><script src="<?php echo cms_basehost; ?>/js/ad.js"></script><script src="<?php echo cms_basehost; ?>/js/bootstrap.min.js"></script></head><body>
+<link rel="stylesheet" href="<?php echo sysconfig('cms_basehost'); ?>/css/bootstrap.min.css"><link rel="stylesheet" href="<?php echo sysconfig('cms_basehost'); ?>/css/admin.css">
+<script src="<?php echo sysconfig('cms_basehost'); ?>/js/jquery.min.js"></script><script src="<?php echo sysconfig('cms_basehost'); ?>/js/respond.min.js"></script><script src="<?php echo sysconfig('cms_basehost'); ?>/js/ad.js"></script><script src="<?php echo sysconfig('cms_basehost'); ?>/js/bootstrap.min.js"></script></head><body>
 
 <div class="blog-masthead clearfix"><nav class="blog-nav">
-<a class="blog-nav-item active" href="<?php echo CMS_ADMIN; ?>"><span class="glyphicon glyphicon-star"></span> <strong>后台管理中心</strong> <span class="glyphicon glyphicon-star-empty"></span></a>
-<a class="blog-nav-item" href="<?php echo cms_basehost; ?>" target="_blank"><span class="glyphicon glyphicon-home"></span> 网站主页</a>
-<a class="blog-nav-item" href="<?php echo CMS_ADMIN; ?>Index/upcache"><span class="glyphicon glyphicon-refresh"></span> 更新缓存</a>
-<a class="blog-nav-item" id="navexit" href="<?php echo CMS_ADMIN.'Login/loginout'; ?>"><span class="glyphicon glyphicon-off"></span> 注销</a>
+<a class="blog-nav-item active" href="<?php echo U('Index/index'); ?>"><span class="glyphicon glyphicon-star"></span> <strong>后台管理中心</strong> <span class="glyphicon glyphicon-star-empty"></span></a>
+<a class="blog-nav-item" href="<?php echo sysconfig('cms_basehost'); ?>" target="_blank"><span class="glyphicon glyphicon-home"></span> 网站主页</a>
+<a class="blog-nav-item" href="<?php echo U('Index/upcache'); ?>"><span class="glyphicon glyphicon-refresh"></span> 更新缓存</a>
+<a class="blog-nav-item" id="navexit" href="<?php echo U('Login/loginout'); ?>"><span class="glyphicon glyphicon-off"></span> 注销</a>
 <a class="blog-nav-item pull-right" href="javascript:;"><small>您好：<span class="glyphicon glyphicon-user"></span> <?php if(isset($_SESSION['admin_user_info'])){echo $_SESSION['admin_user_info']['username'].' ['.$_SESSION['admin_user_info']['rolename'].']';} ?></small></a>
 </nav></div>
 <div class="container-fluid">
@@ -72,6 +72,6 @@ $(document).ready(function(){
 	var mainbox = document.getElementById("mainbox");  
 	mainbox.style.height = (viewH - 75)+"px";  
 </script>
-<iframe src="<?php echo CMS_ADMIN.'Index/welcome'; ?>" frameborder="0" scrolling="yes" width="100%" height="100%" allowtransparency="true" id="appiframe" name="appiframe"></iframe>
+<iframe src="<?php echo U('Index/welcome'); ?>" frameborder="0" scrolling="yes" width="100%" height="100%" allowtransparency="true" id="appiframe" name="appiframe"></iframe>
 </div></div><!-- 右边结束 --></div></div>
 </body></html>

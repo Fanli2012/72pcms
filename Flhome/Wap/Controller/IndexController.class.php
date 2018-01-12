@@ -26,9 +26,9 @@ class IndexController extends BaseController
 		$sql=$subcat." or typeid2 in (".$cat.")";//echo $subcat2;exit;
 		
 		$counts=M("Article")->where($sql)->count();
-		if($counts>cms_maxarc){$counts=cms_maxarc;}
+		if($counts>sysconfig('cms_maxarc')){$counts=sysconfig('cms_maxarc');}
 		
-		$pagesize=cms_pagesize; //默认每页15条，可以把cms_pagesize改成想要的数量
+		$pagesize=sysconfig('cms_pagesize'); //默认每页15条，可以把cms_pagesize改成想要的数量
 		if($counts % $pagesize){ //取总数据量除以每页数的余数
 		$pages = intval($counts/$pagesize) + 1; //如果有余数，则页数等于总数据量除以每页数的结果取整再加一,如果没有余数，则页数等于总数据量除以每页数的结果
 		}else{ $pages = $counts/$pagesize; }
@@ -86,8 +86,8 @@ class IndexController extends BaseController
         $this->post = $post;
 		
 		$counts=M("Taglist")->where("tid=$tag")->count('aid');
-		if($counts>cms_maxarc){$counts=cms_maxarc;}
-		$pagesize=cms_pagesize;$page=0;
+		if($counts>sysconfig('cms_maxarc')){$counts=sysconfig('cms_maxarc');}
+		$pagesize=sysconfig('cms_pagesize');$page=0;
 		if($counts % $pagesize){//取总数据量除以每页数的余数
 		$pages = intval($counts/$pagesize) + 1; //如果有余数，则页数等于总数据量除以每页数的结果取整再加一,如果没有余数，则页数等于总数据量除以每页数的结果
 		}else{$pages = $counts/$pagesize;}

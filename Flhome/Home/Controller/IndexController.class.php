@@ -26,8 +26,8 @@ class IndexController extends BaseController
 		$this->sql = $sql;
 		
 		$counts=M("Article")->where($sql)->count('id');
-		if($counts>cms_maxarc){$counts=cms_maxarc;}
-		$pagesize=cms_pagesize;$page=0;
+		if($counts>sysconfig('cms_maxarc')){$counts=sysconfig('cms_maxarc');}
+		$pagesize=sysconfig('cms_pagesize');$page=0;
 		if($counts % $pagesize){//取总数据量除以每页数的余数
 		$pages = intval($counts/$pagesize) + 1; //如果有余数，则页数等于总数据量除以每页数的结果取整再加一,如果没有余数，则页数等于总数据量除以每页数的结果
 		}else{$pages = $counts/$pagesize;}
@@ -74,8 +74,8 @@ class IndexController extends BaseController
         $this->post = $post;
 		
 		$counts=M("Taglist")->where("tid=$tag")->count('aid');
-		if($counts>cms_maxarc){$counts=cms_maxarc;}
-		$pagesize=cms_pagesize;$page=0;
+		if($counts>sysconfig('cms_maxarc')){$counts=sysconfig('cms_maxarc');}
+		$pagesize=sysconfig('cms_pagesize');$page=0;
 		if($counts % $pagesize){//取总数据量除以每页数的余数
 		$pages = intval($counts/$pagesize) + 1; //如果有余数，则页数等于总数据量除以每页数的结果取整再加一,如果没有余数，则页数等于总数据量除以每页数的结果
 		}else{$pages = $counts/$pagesize;}
@@ -158,8 +158,8 @@ class IndexController extends BaseController
 		$this->sql = $subcat;
 		
 		$counts=M("product")->where($subcat)->count('id');
-		if($counts>cms_maxarc){$counts=cms_maxarc;}
-		$pagesize=cms_pagesize;$page=0;
+		if($counts>sysconfig('cms_maxarc')){$counts=sysconfig('cms_maxarc');}
+		$pagesize=sysconfig('cms_pagesize');$page=0;
 		if($counts % $pagesize){//取总数据量除以每页数的余数
 		$pages = intval($counts/$pagesize) + 1; //如果有余数，则页数等于总数据量除以每页数的结果取整再加一,如果没有余数，则页数等于总数据量除以每页数的结果
 		}else{$pages = $counts/$pagesize;}
@@ -227,7 +227,7 @@ class IndexController extends BaseController
             session("username", $User['username']);
             session("uid", $User["id"]);
             session("admin_user_info", $User);
-			$this->success('登录成功！', CMS_ADMIN , 1);
+			$this->success('登录成功！', U('Fladmin/Index/index'), 1);
         }
         else
         {
@@ -281,6 +281,6 @@ class IndexController extends BaseController
 		$image = new \Think\Image(); 
 		$image->open($imagepath);
 		// 按照原图的比例生成一个最大为240*180的缩略图并保存为thumb.jpg
-		$image->thumb(cms_imgwidth, cms_imgheight)->save('./images/1thumb.jpg');
+		$image->thumb(sysconfig('cms_imgwidth'), sysconfig('cms_imgheight'))->save('./images/1thumb.jpg');
     }
 }

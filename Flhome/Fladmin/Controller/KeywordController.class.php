@@ -32,11 +32,11 @@ class KeywordController extends BaseController
         if(M('Keyword')->data($data)->add())
         {
             S('keywordlist',null); // 删除缓存
-            $this->success('添加成功！', CMS_ADMIN.'Keyword' , 1);
+            $this->success('添加成功！', U('Keyword/index'), 1);
         }
 		else
 		{
-			$this->error('添加失败！请修改后重新添加', CMS_ADMIN.'Keyword/add' , 3);
+			$this->error('添加失败！请修改后重新添加', U('Keyword/add'), 3);
 		}
     }
     
@@ -64,26 +64,26 @@ class KeywordController extends BaseController
 		if(M('Keyword')->where("id=$id")->save($data))
         {
             S('keywordlist',null); // 删除缓存
-            $this->success('修改成功！', CMS_ADMIN.'Keyword' , 1);
+            $this->success('修改成功！', U('Keyword/index'), 1);
         }
 		else
 		{
-			$this->error('修改失败！', CMS_ADMIN.'Keyword/edit?id='.$_POST["id"] , 3);
+			$this->error('修改失败！', U('Keyword/edit',array('id'=>$_POST["id"])), 3);
 		}
     }
     
     public function del()
     {
-		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交',CMS_ADMIN.'Keyword' , 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
+		if(!empty($_GET["id"])){$id = $_GET["id"];}else{$this->error('删除失败！请重新提交', U('Keyword/index'), 3);}if(preg_match('/[0-9]*/',$id)){}else{exit;}
 		
 		if(M("Keyword")->where("id=$id")->delete())
         {
             S('keywordlist',null); // 删除缓存
-            $this->success('删除成功', CMS_ADMIN.'Keyword' , 1);
+            $this->success('删除成功', U('Keyword/index'), 1);
         }
 		else
 		{
-			$this->error('删除失败！请重新提交', CMS_ADMIN.'Keyword', 3);
+			$this->error('删除失败！请重新提交', U('Keyword/index'), 3);
 		}
     }
 }

@@ -5,7 +5,7 @@
 
 <include file="./Flhome/Home/View/header.html" />
 <div class="container"><div class="row">
-<div class="bread"><a href="/"><?php echo cms_indexname; ?></a> > <?php echo get_cat_path($post["id"],"product_type","productlist"); ?></div>
+<div class="bread"><a href="/"><?php echo sysconfig('cms_indexname'); ?></a> > <?php echo get_cat_path($post["id"],"product_type","productlist"); ?></div>
 <h1 class="page-header"><?php echo $post["typename"]; ?></h1>
 
 <?php if($posts){foreach($posts as $row){ ?>

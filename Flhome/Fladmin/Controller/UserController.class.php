@@ -24,11 +24,11 @@ class UserController extends BaseController
 		$_POST['pwd'] = md5($_POST['pwd']);
 		if(M('user')->data($_POST)->add())
         {
-			$this->success('添加成功！', CMS_ADMIN.'User' , 1);
+			$this->success('添加成功！', U('User/index'), 1);
         }
 		else
 		{
-			$this->error('添加失败！请修改后重新添加', CMS_ADMIN.'User/add' , 3);
+			$this->error('添加失败！请修改后重新添加', U('User/add'), 3);
 		}
     }
     
@@ -52,11 +52,11 @@ class UserController extends BaseController
 		$_POST['pwd'] = md5($_POST['pwd']);
 		if(M('user')->where('id='.$id)->save($_POST))
         {
-            $this->success('修改成功！', CMS_ADMIN.'User' , 1);
+            $this->success('修改成功！', U('User/index'), 1);
         }
 		else
 		{
-			$this->error('修改失败！', CMS_ADMIN.'User' , 3);
+			$this->error('修改失败！', U('User/index'), 3);
 		}
     }
 	

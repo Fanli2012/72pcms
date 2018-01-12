@@ -10,7 +10,7 @@
       <div class="row row-offcanvas row-offcanvas-right">
 
         <div class="col-xs-12 col-sm-9">
-<div class="bread"><a href=""><?php echo cms_indexname; ?></a> > <?php echo get_cat_path($post["typeid"]); ?></div>
+<div class="bread"><a href=""><?php echo sysconfig('cms_indexname'); ?></a> > <?php echo get_cat_path($post["typeid"]); ?></div>
 <h1 class="page-header"><?php echo $post["title"]; ?></h1>
 <div class="content"><?php echo $post["body"]; ?>
 <div class="dinfo"><span class="addtime"><?php echo date("Y-m-d",$post["pubdate"]); ?></span>

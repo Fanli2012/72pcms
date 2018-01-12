@@ -24,7 +24,7 @@ class SearchwordController extends BaseController
 		
 		if($insertId = M('searchword')->add($_POST))
         {
-            $this->success('添加成功！', CMS_ADMIN.'Searchword' , 1);
+            $this->success('添加成功！', U('Searchword/index'), 1);
         }
 		else
 		{
@@ -52,7 +52,7 @@ class SearchwordController extends BaseController
 		
 		if(M('searchword')->where('id='.$id)->save($_POST))
         {
-           $this->success('修改成功！', CMS_ADMIN.'Searchword' , 1);
+           $this->success('修改成功！', U('Searchword/index'), 1);
         }
 		else
 		{

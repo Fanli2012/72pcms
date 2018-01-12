@@ -18,7 +18,8 @@ class IndexController extends BaseController
 	
     public function upconfig()
 	{
-        updateconfig();
+        //updateconfig();
+        S('sysconfig',null); //删除缓存
         $this->success('缓存更新成功！');
     }
     

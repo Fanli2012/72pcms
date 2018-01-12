@@ -34,13 +34,13 @@ class CommonController extends Controller
 			else
 			{
 				$menu_id = M('menu')->where(array('module'=>MODULE_NAME, 'controller'=>CONTROLLER_NAME, 'action'=>ACTION_NAME))->getField('id');
-				if(!$menu_id){$this->error('你没有权限访问，请联系管理员！', CMS_ADMIN, 3);}
+				if(!$menu_id){$this->error('你没有权限访问，请联系管理员！', U('Index/index'), 3);}
 				
 				$check = M('access')->where(array('role_id' => $admin_user_info['role_id'], 'menu_id' => $menu_id))->find();
 				
 				if(!$check)
 				{
-					$this->error('你没有权限访问，请联系管理员！', CMS_ADMIN, 3);
+					$this->error('你没有权限访问，请联系管理员！', U('Index/index'), 3);
 				}
 			}
         }
